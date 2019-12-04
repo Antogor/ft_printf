@@ -5,13 +5,11 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-typedef struct ar_printf
+typedef struct va_printf
 {
 	int len;
-	int fd;
-	char *s;
 } t_list;
 
 int		ft_printf(const char *s, ...);
-int		check_flags(const char *s, ...);
+int	check_flags(const char *s, ...);
 #endif

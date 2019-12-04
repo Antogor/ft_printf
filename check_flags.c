@@ -2,19 +2,23 @@
 
 #include "lib_ft_printf.h"
 
-int		check_flags(const char *s, ...)
+int	check_flags(const char *s, ...)
 {
-	int i;
-	t_list args;
-
-	args.fd = 1;
-	args.s = (char*)s;
-	va_start (args.ap, s);
+	static int d;
+	static char c;
+	va_list args;
+	va_start (args, s);
 
 	if (*s == 'd')
 	{
-		i = va_arg(args.ap, int);
-		return (i);
+		d = va_arg(args, int);
+		va_end(args);
+		return (d);
 	}
-	va_end(args.ap);
+	else if (*s == 'c')
+	{
+		c = va_arg(args, int);
+		va_end(args);
+		return (c);
+	}
 }
