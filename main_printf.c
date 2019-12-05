@@ -11,7 +11,7 @@ int main ()
 	x = 8;
 	a = 10;
 	c = 'a';
-	ft_printf("Hola\n%d\nadios\n%d\n%c\n%s\n", x, a, c, g);
-	printf("Hola\n%x\nadios\n%d\n%c\n%s\n", x, a, c, g);
+	ft_printf("Hola\n%d\nadios\n%d\n%c\n", x, a, c);
+	//printf("Hola\n%x\nadios\n%d\n%c\n%s\n", x, a, c, g);
 	return (0);
 }
