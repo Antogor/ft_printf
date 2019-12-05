@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/05 10:53:36 by agarzon-          #+#    #+#             */
+/*   Updated: 2019/12/05 10:57:10 by agarzon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
@@ -26,12 +36,12 @@ void	ft_putnbr_fd(int n, int fd)
 
 int		ft_printf(const char *s, ...)
 {
-	static int d;
+	static int	d;
 	static char c;
-	static int *str;
-	va_list args;
-	va_start (args, s);
+	static int	*str;
+	va_list		args;
 
+	va_start(args, s);
 	while (*s != '\0')
 	{
 		if (*s == '%')
