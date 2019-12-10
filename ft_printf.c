@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:53:36 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/05 15:32:07 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/10 14:41:49 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,25 @@
 
 int		ft_printf(const char *s, ...)
 {
-	static int	d;
-	static char c;
+	va_list args;
+	int l;
 
-	while (*s != '\0')
+	va_start (args, s);
+	l = 0;
+	while (s[l] != '\0')
 	{
-		if (*s == '%')
+		if (s[l] == '%')
 		{
-			s++;
-			check_flags(&(*s));
-			write_flags(&(*s));
+			l++;
+			if (s[l] == '%')
+				ft_putchar_fd('%', 1);
+			else
+				check_flags(s, l, va_arg(args, int));
 		}
 		else
-			ft_putchar_fd(*s, 1);
-		s++;
+			ft_putchar_fd(s[l], 1);
+		l++;
 	}
-	return (1);
+	va_end (args);
+	return (0);
 }

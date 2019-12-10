@@ -2,9 +2,12 @@ NAME = libftprintf.a
 
 CFLAGS = -c -I -Wall -Wextra -Werror
 
-FUN = ft_printf.c check_flags.c write_flags.c
+FUN = ft_printf.c check_flags.c ../Libreria/ft_putchar_fd.c \
+../Libreria/ft_putnbr_fd.c
 
-OBJS = ft_printf.o check_flags.o write_flags.o
+OBJS = ft_printf.o check_flags.o ../Libreria/ft_putchar_fd.o \
+../Libreria/ft_putnbr_fd.o
+
 
 all: $(NAME)
 
