@@ -6,16 +6,29 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/10 14:41:44 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/10 17:09:54 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-void	check_flags(const char *s, int l, int x)
+void	check_flags(const char *s, int l, va_list args)
 {
+	convert_t type;
+
 	if (s[l] == 'd')
-		ft_putnbr_fd(x, 1);
+	{
+		type.d = va_arg(args, int);
+		ft_putnbr_fd(type.d, 1);
+	}
 	else if (s[l] == 'c')
-		ft_putchar_fd(x, 1);	
+	{
+		type.c = va_arg(args, int);
+		ft_putchar_fd(type.c, 1);
+	}
+	else if (s[l] == 's')
+	{
+		type.s = va_arg(args, char *);
+		ft_putstr_fd(type.s, 1);
+	}
 }
