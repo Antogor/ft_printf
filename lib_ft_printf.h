@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:51 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/10 16:37:12 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/11 11:23:01 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 # include <stdarg.h>
 # include "../Libreria/libft.h"
 
-typedef struct s_convert 
+typedef struct	s_convert
 {
-	char c;
-	int d;
-	char *s;
+	char		c;
+	int			d;
+	char		*s;
 
-} convert_t;
+}				t_convert;
 
-int		ft_printf(const char *s, ...);
-void	check_flags(const char *s, int l, va_list args);
+int				ft_printf(const char *s, ...);
+void			check_flags(const char *s, int l, va_list args);
 #endif

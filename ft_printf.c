@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:53:36 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/10 16:12:04 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/11 11:21:45 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int		ft_printf(const char *s, ...)
 {
 	va_list args;
-	int l;
+	int		l;
 
-	va_start (args, s);
+	va_start(args, s);
 	l = 0;
 	while (s[l] != '\0')
 	{
@@ -33,6 +33,6 @@ int		ft_printf(const char *s, ...)
 			ft_putchar_fd(s[l], 1);
 		l++;
 	}
-	va_end (args);
+	va_end(args);
 	return (0);
 }
