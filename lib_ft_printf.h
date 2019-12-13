@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:51 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/13 12:33:00 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/13 15:33:55 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct	s_convert
 	char		c;
 	int			d;
 	char		*s;
+	int			h;
 
 }				t_convert;
 

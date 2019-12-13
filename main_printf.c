@@ -11,11 +11,11 @@ int main ()
 	int *p = &x;
 	char *p2 = &c;
 
-	//ft_printf("MI PRINTF: INT = %d, CHAR = %c, PORCENTAJE %%, STRING = %s\n", x, c, g);
-	printf("PRINTF: INT = %X, CHAR = %c, PORCENTAJE %%, STRING = %s, DMEMORY = %p\n", x, c, g, p);
+	ft_printf("MI PRINTF: INT = %d, CHAR = %c, PORCENTAJE %%, STRING = %s, HEXA = %X\n", x, c, g, x);
+	printf("PRINTF: INT = %d, CHAR = %c, PORCENTAJE %%, STRING = %s, DMEMORY = %p, HEXA = %X\n", x, c, g, p, x);
 	printf("PRUEBAS DE FLAGS P = %p\n", p2);
 
-	convert_hexa(x);
+	//convert_hexa(x);
 	//printf("%d", f);
 	return (0);
 }

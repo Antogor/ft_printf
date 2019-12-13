@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 11:12:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/13 12:35:23 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/13 16:52:13 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	convert_hexa(int nb)
 		nb = nb / 16;
 	}
 	q = l;
-	while (q >= 0)
+	while (q > 0)
 	{
 		ft_putchar_fd(hexanum[q], 1);
 		q--;
