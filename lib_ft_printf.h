@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:51 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/13 12:11:25 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/13 12:33:00 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ typedef struct	s_convert
 
 int				ft_printf(const char *s, ...);
 void			check_flags(const char *s, int l, va_list args);
-char			*convert_hexa(int nb);
+void			convert_hexa(int nb);
 #endif
