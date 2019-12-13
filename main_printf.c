@@ -5,15 +5,15 @@ void	ft_putnbr_base(int nbr, char *base);
 
 int main ()
 {
-	int x = 85;
+	int x = 54534;
 	char c = 'a';
 	char g[] = "que pasa";
-	/*int *p = &x;
+	int *p = &x;
 	char *p2 = &c;
 
-	ft_printf("MI PRINTF: INT = %d, CHAR = %c, PORCENTAJE %%, STRING = %s\n", x, c, g);
-	printf("PRINTF: INT = %d, CHAR = %c, PORCENTAJE %%, STRING = %s, DMEMORY = %p\n", x, c, g, p);
-	printf("PRUEBAS DE FLAGS P = %p\n", p2);*/
+	//ft_printf("MI PRINTF: INT = %d, CHAR = %c, PORCENTAJE %%, STRING = %s\n", x, c, g);
+	printf("PRINTF: INT = %X, CHAR = %c, PORCENTAJE %%, STRING = %s, DMEMORY = %p\n", x, c, g, p);
+	printf("PRUEBAS DE FLAGS P = %p\n", p2);
 
 	convert_hexa(x);
 	//printf("%d", f);
