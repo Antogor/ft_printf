@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 11:12:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/15 14:26:52 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/15 16:54:21 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-static int	count_hexa(int nb)
+int		count_hexa(int nb)
 {
 	int n;
 	int len;
@@ -40,7 +40,7 @@ void	put_hexa(char *hexanum, int l)
 	hexanum = NULL;
 }
 
-void		convert_hexa(int nb)
+void	convert_hexa(int nb)
 {
 	int tmp;
 	int l;
@@ -56,12 +56,11 @@ void		convert_hexa(int nb)
 			hexanum[l] = (char) (48 + tmp);
 			l++;
 		}
-		else if (tmp > 10)
+		else if (tmp >= 10)
 		{
 			hexanum[l] = (char) (55 + tmp);
 			l++;
 		}
-		l++;
 		nb = nb / 16;
 	}
 	hexanum[l] = '\0';

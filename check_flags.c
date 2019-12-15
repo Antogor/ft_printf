@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/13 17:08:35 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/15 16:52:31 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	check_flags(const char *s, int l, va_list args)
 		type.s = va_arg(args, char *);
 		ft_putstr_fd(type.s, 1);
 	}
-	else if (s[l] == 'X')
+	else if (s[l] == 'X' || s[l] == 'x')
 	{
 		type.h = va_arg(args, int);
 		convert_hexa(type.h);
