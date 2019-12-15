@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 11:12:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/15 14:03:40 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/15 14:26:52 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void		convert_hexa(int nb)
 {
 	int tmp;
 	int l;
-	int q;
 	char *hexanum;
 
 	hexanum = malloc(sizeof(char) * (count_hexa(nb) + 1));
