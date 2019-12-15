@@ -6,19 +6,48 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 11:12:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/13 16:52:13 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/15 14:03:40 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-void	convert_hexa(int nb)
+static int	count_hexa(int nb)
+{
+	int n;
+	int len;
+	n = nb;
+	len  = 0;
+	while (n != 0)
+	{
+		n = n / 16;
+		len++;
+	}
+	return (len);
+}
+
+void	put_hexa(char *hexanum, int l)
+{
+	int q;
+
+	q = l;
+	while (q >= 0)
+	{
+		ft_putchar_fd(hexanum[q], 1);
+		q--;
+	}
+	free(hexanum);
+	hexanum = NULL;
+}
+
+void		convert_hexa(int nb)
 {
 	int tmp;
 	int l;
 	int q;
 	char *hexanum;
 
+	hexanum = malloc(sizeof(char) * (count_hexa(nb) + 1));
 	l = 0;
 	while (nb != 0)
 	{
@@ -36,10 +65,6 @@ void	convert_hexa(int nb)
 		l++;
 		nb = nb / 16;
 	}
-	q = l;
-	while (q > 0)
-	{
-		ft_putchar_fd(hexanum[q], 1);
-		q--;
-	}
+	hexanum[l] = '\0';
+	put_hexa(hexanum, l);
 }
