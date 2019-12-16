@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 11:12:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/16 12:10:22 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/16 12:18:39 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@ int		count_hexa(int nb)
 {
 	int n;
 	int len;
+
 	n = nb;
-	len  = 0;
+	len = 0;
 	while (n != 0)
 	{
 		n = n / 16;
@@ -42,9 +43,9 @@ void	put_hexa(char *hexanum, int l)
 
 void	convert_hexa(int nb, char c)
 {
-	int tmp;
-	int l;
-	char *hexanum;
+	int		tmp;
+	int		l;
+	char	*hexanum;
 
 	hexanum = malloc(sizeof(char) * (count_hexa(nb) + 1));
 	l = 0;
@@ -52,22 +53,13 @@ void	convert_hexa(int nb, char c)
 	{
 		tmp = nb % 16;
 		if (tmp < 10)
-		{
-			hexanum[l] = (char) (48 + tmp);
-			l++;
-		}
+			hexanum[l++] = (char)(48 + tmp);
 		else if (tmp >= 10)
 		{
 			if (c == 'X')
-			{
-				hexanum[l] = (char) (55 + tmp);
-				l++;
-			}
+				hexanum[l++] = (char)(55 + tmp);
 			else
-			{
-				hexanum[l] = (char) (87 + tmp);
-				l++;
-			}
+				hexanum[l++] = (char)(87 + tmp);
 		}
 		nb = nb / 16;
 	}
