@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/17 12:01:55 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/17 16:22:10 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	check_flags(const char *s, int l, va_list args)
 {
-	t_convert type;
+	t_print type;
 
 	if (s[l] == 'd' || s[l] == 'i')
 	{
