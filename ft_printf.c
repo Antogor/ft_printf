@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:53:36 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/18 10:05:20 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:15:57 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ int		ft_printf(const char *s, ...)
 			if (s[l] == '%')
 				ft_putchar_fd('%', 1);
 			else
-				check_flags(s, l, type.flags);
+			{
+				//check_flags(s, l, type.flags);
+				l = check_flags(s, l, &type);
+				write_case(s, l, &type);
+			}
 		}
 		else
 			ft_putchar_fd(s[l], 1);
