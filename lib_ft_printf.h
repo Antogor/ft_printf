@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:51 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/17 16:39:22 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/18 09:59:11 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct	s_list_print
 {
-	va_list		args;
+	va_list		flags;
 	char		c;
 	int			d;
 	char		*s;
