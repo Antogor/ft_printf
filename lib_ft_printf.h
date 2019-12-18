@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:51 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/18 12:39:32 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/18 13:52:39 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct	s_list_print
 	int			h;
 	int			spaces;
 	int			precision;
-	int			zeros;
 	char		f;
 	char		punt;
 }				t_print;
@@ -36,4 +35,5 @@ void			write_case(const char *s, int l, t_print *type);
 int				check_flags(const char *s, int l,  t_print *flags);
 void			convert_hexa(int nb, char c);
 void			display_d(int d, int spaces, char f);
+void			display_c(int c, int spaces, char f);
 #endif
