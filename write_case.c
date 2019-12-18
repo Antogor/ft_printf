@@ -9,8 +9,9 @@ void	write_case(const char *s, int l, t_print *type)
 		display_c(type->c = va_arg(type->flags, int), type->spaces, type->f);
 	else if (s[l] == 's')
 	{
-		type->s = va_arg(type->flags, char *);
-		ft_putstr_fd(type->s, 1);
+		display_s(type->s = va_arg(type->flags, char *), type->spaces, type->f,
+				type->precision, type->punt);
+		//ft_putstr_fd(type->s, 1);
 	}
 	else if (s[l] == 'X' || s[l] == 'x')
 	{
