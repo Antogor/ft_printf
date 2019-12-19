@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:51 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/19 13:40:52 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/19 16:30:11 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,19 @@
 # include <stdio.h>
 # include "../Libreria/libft.h"
 
+typedef struct	s_list_printf
+{
+	const char	*format;
+	va_list		args;
+	int			spaces;
+	int			precision;
+	char		f;
+	char		punt;
+}				t_printf;
+
+int				ft_printf(const char *s, ...);
+#endif
+/*
 typedef struct	s_list_print
 {
 	va_list		flags;
@@ -38,3 +51,4 @@ void			display_d(int d, int spaces, char f);
 void			display_c(int c, int spaces, char f);
 void			display_s(char *s, int spaces, char f, int precision, char punt);
 #endif
+*/

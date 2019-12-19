@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:53:36 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/18 12:15:57 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/19 16:40:40 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,31 @@
 
 int		ft_printf(const char *s, ...)
 {
-	//va_list args;
-	t_print	type;
+	int br;
+	char f;
+	t_printf *tab;
+
+	if (!(tab = (t_printf*)malloc(sizeof(t_printf))))
+		return (-1);
+	tab->format = s;
+	va_start(tab->args, s);
+	while (*s != '\0')
+	{
+		if (*s != '%')
+			br += write(1, &s, 1);
+		else
+		{
+			f = check_flags(tab->args);
+			br += write_case(tab->args);
+		}
+		s++;
+	}
+	free(tab);
+	tab = NULL;
+	va_end(tab->args);
+	return (br);
+}
+/*	
 	int		l;
 
 	va_start(type.flags, s);
@@ -40,4 +63,4 @@ int		ft_printf(const char *s, ...)
 	}
 	va_end(type.flags);
 	return (0);
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/18 12:39:56 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/19 16:41:28 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,14 @@ size_t		ft_strlen_print(const char *s, int l)
 	return (q);
 }
 
-int	check_flags(const char *s, int l, t_print *flags)
+char	check_flags(va_list args)
 {
+	char flags;
+
+	
+	return (flags);
+}
+/*{
 	char *substr;
 	size_t q;
 
@@ -54,4 +60,4 @@ int	check_flags(const char *s, int l, t_print *flags)
 		l += q;
 	}
 	return (l);
-}
+}*/
