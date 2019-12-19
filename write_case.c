@@ -12,7 +12,7 @@ void	write_case(const char *s, int l, t_print *type)
 				type->precision, type->punt);
 	else if (s[l] == 'X' || s[l] == 'x')
 	{
-		type->h = va_arg(type->flags, int);
-		convert_hexa(type->h, s[l]);
+		//type->h = va_arg(type->flags, int);
+		convert_hexa(type->h = va_arg(type->flags, int), s[l], type->spaces, type->f);
 	}
 }

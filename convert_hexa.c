@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 11:12:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/16 13:56:53 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/19 13:41:06 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,84 @@ int		count_hexa(int nb)
 	return (len);
 }
 
-void	put_hexa(char *hexanum, int l)
+void	put_spaces_hex(int q, int total, char *hexanum, char c)
 {
-	int q;
-
-	q = l;
 	while (q >= 0)
 	{
-		ft_putchar_fd(hexanum[q], 1);
+		if (c == 'X')
+			ft_putchar_fd(hexanum[q], 1);
+		else
+		{
+			if (hexanum[q] >= 65 && hexanum[q] <= 90)
+				hexanum[q] = ft_tolower(hexanum[q]);
+			ft_putchar_fd(hexanum[q], 1);
+		}
 		q--;
+	}
+	while (total > 0)
+	{
+		ft_putchar_fd(' ', 1);
+		total--;
+	}
+}
+
+void	put_zeros_hex(int q, int total, char *hexanum, char c)
+{
+	while (total > 0)
+	{
+		ft_putchar_fd('0', 1);
+		total--;
+	}
+	while (q >= 0)
+	{
+		if (c == 'X')
+			ft_putchar_fd(hexanum[q], 1);
+		else
+		{
+			if (hexanum[q] >= 65 && hexanum[q] <= 90)
+				hexanum[q] = ft_tolower(hexanum[q]);
+			ft_putchar_fd(hexanum[q], 1);
+		}
+		q--;
+	}
+}
+
+void	put_hexa(char *hexanum, int l, int spaces, char f, char c)
+{
+	int q;
+	size_t len;
+	int total;
+
+	len = ft_strlen(hexanum);
+	if ((int)len < spaces)
+		total = spaces - len;
+	else
+		total = len - spaces;
+	q = l;
+	if (f == '-' && spaces > (int)l)
+		put_spaces_hex(q, total, hexanum, c);
+	else if (f == '0' && spaces > (int)l)
+		put_zeros_hex(q, total, hexanum, c);
+	else
+	{
+		while (q >= 0)
+		{
+			if (c == 'X')
+				ft_putchar_fd(hexanum[q], 1);
+			else
+			{
+				if (hexanum[q] >= 'A' && hexanum[q] <= 'Z')
+					hexanum[q] = ft_tolower(hexanum[q]);
+				ft_putchar_fd(hexanum[q], 1);
+			}
+			q--;
+		}
 	}
 	free(hexanum);
 	hexanum = NULL;
 }
 
-void	convert_hexa(int nb, char c)
+void	convert_hexa(int nb, char c, int spaces, char f)
 {
 	int		tmp;
 	int		l;
@@ -58,13 +121,14 @@ void	convert_hexa(int nb, char c)
 			hexanum[l++] = (char)(48 + tmp);
 		else if (tmp >= 10)
 		{
-			if (c == 'X')
+			hexanum[l++] = (char)(55 + tmp);
+			/*if (c == 'X')
 				hexanum[l++] = (char)(55 + tmp);
 			else
-				hexanum[l++] = (char)(87 + tmp);
+				hexanum[l++] = (char)(87 + tmp);*/
 		}
 		nb = nb / 16;
 	}
 	hexanum[l] = '\0';
-	put_hexa(hexanum, l);
+	put_hexa(hexanum, l, spaces, f, c);
 }
