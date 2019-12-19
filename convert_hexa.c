@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 11:12:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/19 13:41:06 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/19 13:42:46 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,13 +120,7 @@ void	convert_hexa(int nb, char c, int spaces, char f)
 		if (tmp < 10)
 			hexanum[l++] = (char)(48 + tmp);
 		else if (tmp >= 10)
-		{
 			hexanum[l++] = (char)(55 + tmp);
-			/*if (c == 'X')
-				hexanum[l++] = (char)(55 + tmp);
-			else
-				hexanum[l++] = (char)(87 + tmp);*/
-		}
 		nb = nb / 16;
 	}
 	hexanum[l] = '\0';
