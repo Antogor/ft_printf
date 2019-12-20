@@ -17,15 +17,13 @@
 # include <stdio.h>
 # include "../Libreria/libft.h"
 
-typedef struct	s_list_printf
+typedef	struct	s_list_printf
 {
 	const char	*format;
 	va_list		args;
 	int			spaces;
-	int			precision;
 	int			br;
 	char		f;
-	char		punt;
 }				t_printf;
 
 int				ft_printf(const char *s, ...);
