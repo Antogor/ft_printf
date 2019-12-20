@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:53:36 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/19 16:40:40 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/20 10:36:11 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int		ft_printf(const char *s, ...)
 			br += write(1, &s, 1);
 		else
 		{
-			f = check_flags(tab->args);
-			br += write_case(tab->args);
+			f = check_flags(s);
+		//	br += write_case(tab->args);
 		}
 		s++;
 	}
