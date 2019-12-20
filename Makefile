@@ -33,5 +33,5 @@ fclean: clean
 
 re: fclean all
 
-norminette: 
+norminette:
 	$(NORMINETTE) $(FUN_PRINT)
