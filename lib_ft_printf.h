@@ -23,6 +23,7 @@ typedef	struct	s_list_printf
 	va_list		args;
 	int			spaces;
 	int			br;
+	int			precision;
 	char		f;
 }				t_printf;
 
