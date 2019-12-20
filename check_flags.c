@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/20 11:11:41 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/20 12:14:14 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,42 +25,46 @@ size_t	ft_strlen_print(const char *s)
 	return (q);
 }
 
-char	check_flags(const char *s)
+char	check_flags(const char *s, t_printf *tab)
 {
-	char	flags;
-	int		q;
-	int		spaces;
-	int		precision;
-	char	*substr;
+	int			q;
+	char		*substr;
+	int			l;
 
-	s++;
-	while ((*s == '-' || *s == '0') && *s == '.')
+	l = 1;
+	while ((s[l] == '-' || s[l] == '0') || s[l] == '.')
 	{
-		if (*s == '-' || *s == '0')
+		if (s[l] == '-' || s[l] == '0')
 		{
-			if (*s == '-')
-				substr = ft_substr(s, 0, (q = ft_strlen_print(s)));
+			if (s[l] == '-')
+			{
+				l++;
+				substr = ft_substr(s, l, (q = ft_strlen_print(&s[l])));
+				tab->br = q;
+			}
 			else
-				substr = ft_substr(s, 0, (q = ft_strlen_print(s)));
-			s++;
-			spaces = ft_atoi(substr);
-			printf("%s\n", substr);
-			printf("%d\n", spaces);
+			{
+				l++;
+				substr = ft_substr(s, l, (q = ft_strlen_print(&s[l])));
+				tab->br = q;
+			}
+			tab->spaces = ft_atoi(substr);
 			free(substr);
 			substr = NULL;
-			s += q;
-			printf("%c\n", *s);
+			//l += q;
 		}
-		if (*s == '.')
+		if (s[l] == '.')
 		{
-			s++;
+			l++;
 			substr = ft_substr(s, 0, (q = ft_strlen_print(s)));
-			precision = ft_atoi(substr);
+			tab->precision = ft_atoi(substr);
+			tab->br = q;
 			free(substr);
 			substr = NULL;
 		}
+		l++;
 	}
-	return (*s);
+	return (s[l]);
 }
 
 /*

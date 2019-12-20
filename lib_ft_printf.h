@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:51 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/20 10:19:24 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/20 12:15:42 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ typedef struct	s_list_printf
 	va_list		args;
 	int			spaces;
 	int			precision;
+	int			br;
 	char		f;
 	char		punt;
 }				t_printf;
 
 int				ft_printf(const char *s, ...);
-char			check_flags(const char *s);
+char			check_flags(const char *s, t_printf *tab);
 #endif
 /*
 typedef struct	s_list_print

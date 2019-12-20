@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:53:36 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/20 11:08:29 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/20 12:13:59 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 
 int		ft_printf(const char *s, ...)
 {
-	int			br;
 	char		f;
+	int			l;
+	int			br;
 	t_printf	*tab;
 
 	if (!(tab = (t_printf*)malloc(sizeof(t_printf))))
 		return (-1);
 	tab->format = s;
 	va_start(tab->args, s);
-	while (*s != '\0')
+	l = 0;
+	while (s[l] != '\0')
 	{
-		if (*s != '%')
-			br += write(1, &s, 1);
+		if (s[l] != '%')
+			tab->br += write(1, &s[l], 1);
 		else
 		{
-			f = check_flags(s);
-			br += write_case(tab->args);
+			f = check_flags(&s[l], tab);
+			//br += write_case(f);
 		}
-		s++;
+		l++;
 	}
+	br = tab->br;
+	printf("SSSSS%d", tab->br);
 	free(tab);
 	tab = NULL;
 	va_end(tab->args);
