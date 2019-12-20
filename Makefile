@@ -2,6 +2,8 @@ NAME = libftprintf.a
 
 CFLAGS = -c -I -Wall -Wextra -Werror
 
+NORMINETTE = norminette
+
 FUN_PRINT = ft_printf.c check_flags.c convert_hexa.c  write_case.c display_d.c display_c.c \
 			display_s.c
 
@@ -30,3 +32,6 @@ fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+
+norminette: 
+	$(NORMINETTE) $(FUN_PRINT)

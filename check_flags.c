@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:54:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/20 10:34:29 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/20 11:11:41 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-size_t		ft_strlen_print(const char *s)
+size_t	ft_strlen_print(const char *s)
 {
 	size_t q;
 
@@ -27,11 +27,12 @@ size_t		ft_strlen_print(const char *s)
 
 char	check_flags(const char *s)
 {
-	char flags;
-	int q;
-	int spaces;
-	int precision;
-	char *substr;
+	char	flags;
+	int		q;
+	int		spaces;
+	int		precision;
+	char	*substr;
+
 	s++;
 	while ((*s == '-' || *s == '0') && *s == '.')
 	{
@@ -61,32 +62,35 @@ char	check_flags(const char *s)
 	}
 	return (*s);
 }
-/*{
-	char *substr;
-	size_t q;
 
-	if (s[l] == '-' || s[l] == '0')
-	{
-		if (s[l] == '-')
-			flags->f = '-';
-		else
-			flags->f = '0';
-		l++;
-		substr = ft_substr(s, l, (q = ft_strlen_print(s, l)));
-		flags->spaces = ft_atoi(substr);
-		free(substr);
-		substr == NULL;
-		l += q;
-	}
-	if (s[l] == '.')
-	{
-		flags->punt = '.';
-		l++;
-		substr = ft_substr(s, l, (q = ft_strlen_print(s, l)));
-		flags->precision = ft_atoi(substr);
-		free(substr);
-		substr == NULL;
-		l += q;
-	}
-	return (l);
-}*/
+/*
+**	{
+**	char *substr;
+**	size_t q;
+**
+**	if (s[l] == '-' || s[l] == '0')
+**	{
+**	if (s[l] == '-')
+**	flags->f = '-';
+**	else
+**	flags->f = '0';
+**	l++;
+**	substr = ft_substr(s, l, (q = ft_strlen_print(s, l)));
+**	flags->spaces = ft_atoi(substr);
+**	free(substr);
+**	substr == NULL;
+**	l += q;
+**	}
+**	if (s[l] == '.')
+**	{
+**	flags->punt = '.';
+**	l++;
+**	substr = ft_substr(s, l, (q = ft_strlen_print(s, l)));
+**	flags->precision = ft_atoi(substr);
+**	free(substr);
+**	substr == NULL;
+**	l += q;
+**	}
+**	return (l);
+**	}
+*/

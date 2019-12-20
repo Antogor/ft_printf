@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 11:12:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/19 13:42:46 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/20 11:01:40 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ void	put_zeros_hex(int q, int total, char *hexanum, char c)
 
 void	put_hexa(char *hexanum, int l, int spaces, char f, char c)
 {
-	int q;
-	size_t len;
-	int total;
+	int		q;
+	size_t	len;
+	int		total;
 
 	len = ft_strlen(hexanum);
 	if ((int)len < spaces)

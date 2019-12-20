@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/17 16:35:59 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/18 13:14:25 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/20 10:58:12 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ void	ft_putzeros(int d, char f, int total)
 
 void	display_d(int d, int spaces, char f)
 {
-	char *q;
-	size_t l;
-	int total;
+	char	*q;
+	size_t	l;
+	int		total;
 
 	q = ft_itoa(d);
 	l = ft_strlen(q);

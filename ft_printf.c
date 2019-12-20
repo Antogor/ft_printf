@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/05 10:53:36 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/20 10:36:11 by agarzon-         ###   ########.fr       */
+/*   Updated: 2019/12/20 11:08:29 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_printf(const char *s, ...)
 {
-	int br;
-	char f;
-	t_printf *tab;
+	int			br;
+	char		f;
+	t_printf	*tab;
 
 	if (!(tab = (t_printf*)malloc(sizeof(t_printf))))
 		return (-1);
@@ -29,7 +29,7 @@ int		ft_printf(const char *s, ...)
 		else
 		{
 			f = check_flags(s);
-		//	br += write_case(tab->args);
+			br += write_case(tab->args);
 		}
 		s++;
 	}
@@ -38,29 +38,30 @@ int		ft_printf(const char *s, ...)
 	va_end(tab->args);
 	return (br);
 }
-/*	
-	int		l;
-
-	va_start(type.flags, s);
-	l = 0;
-	while (s[l] != '\0')
-	{
-		if (s[l] == '%')
-		{
-			l++;
-			if (s[l] == '%')
-				ft_putchar_fd('%', 1);
-			else
-			{
-				//check_flags(s, l, type.flags);
-				l = check_flags(s, l, &type);
-				write_case(s, l, &type);
-			}
-		}
-		else
-			ft_putchar_fd(s[l], 1);
-		l++;
-	}
-	va_end(type.flags);
-	return (0);
-}*/
+/*
+**	int		l;
+**
+**	va_start(type.flags, s);
+**	l = 0;
+**	while (s[l] != '\0')
+**	{
+**	if (s[l] == '%')
+**	{
+**	l++;
+**	if (s[l] == '%')
+**	ft_putchar_fd('%', 1);
+**	else
+**	{
+**	check_flags(s, l, type.flags);
+**	l = check_flags(s, l, &type);
+**	write_case(s, l, &type);
+**	}
+**	}
+**	else
+**	ft_putchar_fd(s[l], 1);
+**	l++;
+**	}
+**	va_end(type.flags);
+**	return (0);
+**	}
+*/
