@@ -21,14 +21,22 @@ typedef	struct	s_list_printf
 {
 	const char	*format;
 	va_list		args;
-	int			spaces;
-	int			br;
+	int			d;
+	int			flags;
 	int			precision;
-	char		f;
+	int			width;
+	int			type;
+	int			conversion;
+	int			len;
 }				t_printf;
 
 int				ft_printf(const char *s, ...);
 char			check_flags(const char *s, t_printf *tab);
+int				ft_flags(const char *s, t_printf *tab);
+int				ft_width(const char *s, t_printf *tab, int flags);
+char			ft_type(const char *s, t_printf *tab);
+int				ft_conversion(t_printf *tab);
+void			display_d(int d, t_printf *tab);
 #endif
 /*
 typedef struct	s_list_print

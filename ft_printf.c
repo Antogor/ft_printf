@@ -14,29 +14,25 @@
 
 int		ft_printf(const char *s, ...)
 {
-	char		f;
-	int			l;
 	int			br;
 	t_printf	*tab;
 
 	if (!(tab = (t_printf*)malloc(sizeof(t_printf))))
 		return (-1);
-	tab->format = s;
 	va_start(tab->args, s);
-	l = 0;
-	while (s[l] != '\0')
+	tab->len = 0;
+	while (s[tab->len] != '\0')
 	{
-		if (s[l] != '%')
-			tab->br += write(1, &s[l], 1);
+		if (s[tab->len] != '%')
+			br += write(1, &s[tab->len], 1);
 		else
 		{
-			f = check_flags(&s[l], tab);
-			//br += write_case(f);
+			tab->len++;
+			check_flags(s, tab);
 		}
-		l++;
+		tab->len++;
 	}
-	br = tab->br;
-	printf("SSSSS%d", tab->br);
+	br += tab->len;
 	free(tab);
 	tab = NULL;
 	va_end(tab->args);

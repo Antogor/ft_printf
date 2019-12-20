@@ -12,7 +12,7 @@
 
 #include "lib_ft_printf.h"
 
-void	ft_putzeros(int d, char f, int total)
+void	ft_putzeros(int d, int total)
 {
 	if (d < 0)
 	{
@@ -36,7 +36,7 @@ void	ft_putzeros(int d, char f, int total)
 	}
 }
 
-void	display_d(int d, int spaces, char f)
+void	display_d(int d, t_printf *tab)
 {
 	char	*q;
 	size_t	l;
@@ -44,11 +44,11 @@ void	display_d(int d, int spaces, char f)
 
 	q = ft_itoa(d);
 	l = ft_strlen(q);
-	if ((int)l < spaces)
-		total = spaces - l;
+	if ((int)l < tab->width)
+		total = tab->width - l;
 	else
-		total = l - spaces;
-	if (f == '-' && spaces > (int)l)
+		total = l - tab->width;
+	if (tab->flags == '-' && tab->width > (int)l)
 	{
 		ft_putnbr_fd(d, 1);
 		while (total > 0)
@@ -57,8 +57,9 @@ void	display_d(int d, int spaces, char f)
 			total--;
 		}
 	}
-	else if (f == '0' && spaces > (int)l)
-		ft_putzeros(d, f, total);
+	else if (tab->flags == '0' && tab->width > (int)l)
+		ft_putzeros(d, total);
 	else
 		ft_putnbr_fd(d, 1);
+	tab->len += l;
 }

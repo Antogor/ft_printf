@@ -12,7 +12,7 @@
 
 #include "lib_ft_printf.h"
 
-void	write_case(const char *s, int l, t_print *type)
+void	write_case(const char *s, int l, t_printf *type)
 {
 	if (s[l] == 'd' || s[l] == 'i')
 		display_d(type->d = va_arg(type->flags, int), type->spaces, type->f);
