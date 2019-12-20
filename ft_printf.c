@@ -23,7 +23,7 @@ int		ft_printf(const char *s, ...)
 		return (-1);
 	tab->format = s;
 	va_start(tab->args, s);
-	//l = 0;
+	l = 0;
 	while (s[l] != '\0')
 	{
 		if (s[l] != '%')
