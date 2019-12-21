@@ -14,17 +14,17 @@
 
 int		ft_printf(const char *s, ...)
 {
+	int			br;
 	t_printf	*tab;
 
 	if (!(tab = (t_printf*)malloc(sizeof(t_printf))))
 		return (-1);
 	va_start(tab->args, s);
 	tab->len = 0;
-	tab->br = 0;
 	while (s[tab->len] != '\0')
 	{
 		if (s[tab->len] != '%')
-			tab->br += write(1, &s[tab->len], 1);
+			br += write(1, &s[tab->len], 1);
 		else
 		{
 			tab->len++;
@@ -32,11 +32,10 @@ int		ft_printf(const char *s, ...)
 		}
 		tab->len++;
 	}
-	tab->br += tab->len;
 	free(tab);
 	tab = NULL;
 	va_end(tab->args);
-	return (tab->br);
+	return (br);
 }
 /*
 **	int		l;
