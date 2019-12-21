@@ -4,7 +4,12 @@
 int main ()
 {
 	int x = 6;
-	ft_printf("%-10d\n", x);
+	int f;
+	int j;
+	f = ft_printf("%-10dhola; %03dhola\n", x, x);
+	j = printf("%-10dhola; %03dhola\n", x, x);
+
+	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 /*	int u = 20;
 	char c = 'a';
 	char g[] = "que pasa";

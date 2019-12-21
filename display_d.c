@@ -61,5 +61,4 @@ void	display_d(int d, t_printf *tab)
 		ft_putzeros(d, total);
 	else
 		ft_putnbr_fd(d, 1);
-	tab->len += l;
 }

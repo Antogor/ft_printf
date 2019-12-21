@@ -19,8 +19,8 @@
 
 typedef	struct	s_list_printf
 {
-	const char	*format;
 	va_list		args;
+	int			br;
 	int			d;
 	int			flags;
 	int			precision;
