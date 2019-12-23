@@ -4,10 +4,11 @@
 int main ()
 {
 	int x = 6;
+	int g = -24;
 	int f;
 	int j;
-	f = ft_printf("%-10dhola; %03dhola\n", x, x);
-	j = printf("%-10dhola; %03dhola\n", x, x);
+	f = ft_printf("esto son purebas\n%-10dhola; %03dhola\n", x, g);
+	j = printf("esto son purebas\n%-10dhola; %03dhola\n", x, g);
 
 	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 /*	int u = 20;

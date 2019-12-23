@@ -21,10 +21,14 @@ int		ft_printf(const char *s, ...)
 		return (-1);
 	va_start(tab->args, s);
 	tab->len = 0;
+	br = 0;
 	while (s[tab->len] != '\0')
 	{
 		if (s[tab->len] != '%')
-			br += write(1, &s[tab->len], 1);
+		{
+			write(1, &s[tab->len], 1);
+			tab->br++;
+		}
 		else
 		{
 			tab->len++;
@@ -32,6 +36,7 @@ int		ft_printf(const char *s, ...)
 		}
 		tab->len++;
 	}
+	br += tab->br;
 	free(tab);
 	tab = NULL;
 	va_end(tab->args);
