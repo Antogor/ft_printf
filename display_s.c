@@ -30,7 +30,7 @@ void	put_spaces(char *s, size_t l, int spaces)
 	}
 }
 
-void	display_s(char *s, int spaces, char f, int precision, char punt)
+void	display_s(char *s, t_printf *tab)
 {
 	char	*str;
 	size_t	l;

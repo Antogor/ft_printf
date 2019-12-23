@@ -37,7 +37,7 @@ int		check_flags(const char *s, t_printf *tab)
 		if (tab->flags == -1)
 			return (-1);
 	tab->width = ft_width(s, tab, tab->flags);
-//	tab->precision = ft_precision(s, tab, tab->flags);
+	tab->precision = ft_precision(s, tab);
 	tab->type = ft_type(s, tab);
 	tab->conversion = ft_conversion(tab);
 	return (0);
