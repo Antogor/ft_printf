@@ -19,4 +19,9 @@ int		ft_conversion(t_printf *tab)
 		display_s(tab->s = va_arg(tab->args, char *), tab);
 		return (tab->len);
 	}
+	else if (tab->type == 'u')
+	{
+		display_u(tab->u = va_arg(tab->args, unsigned int), tab);
+		return (tab->len);
+	}
 }
