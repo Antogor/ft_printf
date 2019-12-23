@@ -30,6 +30,7 @@ int		ft_precision(const char *s, t_printf *tab)
 			tab->br = q;
 			free(substr);
 			substr = NULL;
+			tab->len += q;
 		}
 	}
 	return (tab->precision);
