@@ -31,7 +31,7 @@ typedef	struct	s_list_printf
 }				t_printf;
 
 int				ft_printf(const char *s, ...);
-char			check_flags(const char *s, t_printf *tab);
+int				check_flags(const char *s, t_printf *tab);
 int				ft_flags(const char *s, t_printf *tab);
 int				ft_width(const char *s, t_printf *tab, int flags);
 char			ft_type(const char *s, t_printf *tab);

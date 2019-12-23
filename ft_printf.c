@@ -15,6 +15,7 @@
 int		ft_printf(const char *s, ...)
 {
 	int			br;
+	int			err;
 	t_printf	*tab;
 
 	if (!(tab = (t_printf*)malloc(sizeof(t_printf))))
@@ -32,7 +33,9 @@ int		ft_printf(const char *s, ...)
 		else
 		{
 			tab->len++;
-			check_flags(s, tab);
+			err = check_flags(s, tab);
+			if (err == -1)
+				return (-1);
 		}
 		tab->len++;
 	}

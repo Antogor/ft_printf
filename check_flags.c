@@ -27,17 +27,20 @@
 **	}
 */
 
-char	check_flags(const char *s, t_printf *tab)
+int		check_flags(const char *s, t_printf *tab)
 {
 	tab->flags = 0;
 	tab->precision = 0;
 	tab->width = 0;
 	tab->type = 0;
 	tab->flags = ft_flags(s, tab);
+		if (tab->flags == -1)
+			return (-1);
 	tab->width = ft_width(s, tab, tab->flags);
 //	tab->precision = ft_precision(s, tab, tab->flags);
 	tab->type = ft_type(s, tab);
 	tab->conversion = ft_conversion(tab);
+	return (0);
 }	
 
 /*
