@@ -6,10 +6,11 @@ int main ()
 	int x = 6;
 	int g = -24;
 	char c = 'a';
+	char *s = "hola";
 	int f;
 	int j;
-	f = ft_printf("%-6chola\n", c);
-	j = printf("%-6chola\n", c);
+	f = ft_printf("%.2s\n", s);
+	j = printf("%.2s\n", s);
 
 	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 /*	int u = 20;

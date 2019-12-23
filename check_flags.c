@@ -30,12 +30,14 @@
 int		check_flags(const char *s, t_printf *tab)
 {
 	tab->flags = 0;
+	tab->punt = 0;
 	tab->precision = 0;
 	tab->width = 0;
 	tab->type = 0;
 	tab->flags = ft_flags(s, tab);
 		if (tab->flags == -1)
 			return (-1);
+	tab->punt = ft_punt(s, tab);
 	tab->width = ft_width(s, tab, tab->flags);
 	tab->precision = ft_precision(s, tab);
 	tab->type = ft_type(s, tab);

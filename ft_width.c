@@ -3,7 +3,7 @@
 
 #include "lib_ft_printf.h"
 
-size_t	ft_strlen_print(const char *s, int l)
+size_t	ft_strlen_print_f(const char *s, int l)
 {
 	size_t q;
 
@@ -25,7 +25,7 @@ int		ft_width(const char *s, t_printf *tab, int flags)
 	{
 		if (s[tab->len] >= '1' && s[tab->len] <= '9')
 		{
-			substr = ft_substr(s, tab->len, (q = ft_strlen_print(s, tab->len)));
+			substr = ft_substr(s, tab->len, (q = ft_strlen_print_f(s, tab->len)));
 			tab->width = ft_atoi(substr);
 			free(substr);
 			substr = NULL;

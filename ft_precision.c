@@ -3,16 +3,34 @@
 
 #include "lib_ft_printf.h"
 
-int		ft_precision(char *s, t_printf *tab)
+size_t	ft_strlen_print_p(const char *s, int l)
 {
-	if (tab->flags == '.')
+	size_t q;
+
+	q = 0;
+	while (s[l] >= '0' && s[l] <= '9')
 	{
-		substr = ft_substr(s, 0, (q = ft_strlen_print(s)));
-		tab->precision = ft_atoi(substr);
-		tab->br = q;
-		free(substr);
-		substr = NULL;
+		q++;
+		l++;
 	}
-	l++;
-	return (s[l]);
+	return (q);
+}
+
+int		ft_precision(const char *s, t_printf *tab)
+{
+	char	*substr;
+	size_t	q;
+
+	if (tab->punt == '.')
+	{
+		if (s[tab->len] >= '1' && s[tab->len] <= '9')
+		{
+			substr = ft_substr(s, 0, (q = ft_strlen_print_p(s, tab->len)));
+			tab->precision = ft_atoi(substr);
+			tab->br = q;
+			free(substr);
+			substr = NULL;
+		}
+	}
+	return (tab->precision);
 }

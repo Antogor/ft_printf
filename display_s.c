@@ -12,7 +12,7 @@
 
 #include "lib_ft_printf.h"
 
-void	put_spaces(char *s, size_t l, int spaces)
+void	put_spaces(char *s, size_t l, int spaces, t_printf *tab)
 {
 	int total;
 
@@ -25,6 +25,7 @@ void	put_spaces(char *s, size_t l, int spaces)
 		while (total > 0)
 		{
 			ft_putchar_fd(' ', 1);
+			tab->br++;
 			total--;
 		}
 	}
@@ -35,14 +36,15 @@ void	display_s(char *s, t_printf *tab)
 	char	*str;
 	size_t	l;
 
-	if (punt == '.')
+	if (tab->punt == '.')
 	{
-		str = ft_substr(s, 0, precision);
+		str = ft_substr(s, 0, tab->precision);
 		ft_putstr_fd(str, 1);
-		if (f == '-')
+		if ( tab->flags == '-')
 		{
 			l = ft_strlen(str);
-			put_spaces(str, l, spaces);
+			tab->br += l;
+			put_spaces(str, l, tab->width, tab);
 		}
 		free(str);
 		str = NULL;
@@ -50,10 +52,9 @@ void	display_s(char *s, t_printf *tab)
 	else
 	{
 		ft_putstr_fd(s, 1);
-		if (f == '-')
-		{
-			l = ft_strlen(s);
-			put_spaces(s, l, spaces);
-		}
+		l = ft_strlen(s);
+		tab->br += l;
+		if (tab->flags == '-')
+			put_spaces(s, l, tab->width, tab);
 	}
 }

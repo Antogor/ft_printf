@@ -15,11 +15,6 @@ int		ft_flags(const char *s, t_printf *tab)
 		tab->len++;
 		return ('0');
 	}
-	else if (s[tab->len] == '.')
-	{
-		tab->len++;
-		return ('.');
-	}
 	else if (s[tab->len] == '-' && s[tab->len + 1] == '0' 
 			|| s[tab->len] == '0' && s[tab->len + 1] == '-')
 			return (-1);
