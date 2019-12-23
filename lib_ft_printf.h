@@ -22,6 +22,7 @@ typedef	struct	s_list_printf
 	va_list		args;
 	int			br;
 	int			d;
+	int			c;
 	int			flags;
 	int			precision;
 	int			width;
@@ -37,6 +38,7 @@ int				ft_width(const char *s, t_printf *tab, int flags);
 char			ft_type(const char *s, t_printf *tab);
 int				ft_conversion(t_printf *tab);
 void			display_d(int d, t_printf *tab);
+void			display_c(int c, t_printf *tab);
 #endif
 /*
 typedef struct	s_list_print

@@ -5,10 +5,11 @@ int main ()
 {
 	int x = 6;
 	int g = -24;
+	char c = 'a';
 	int f;
 	int j;
-	f = ft_printf("esto son purebas\n%-10dhola; %dhola\n", x, g);
-	j = printf("esto son purebas\n%-10dhola; %04dhola\n", x, g);
+	f = ft_printf("%-6chola\n", c);
+	j = printf("%-6chola\n", c);
 
 	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 /*	int u = 20;

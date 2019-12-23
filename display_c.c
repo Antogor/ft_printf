@@ -12,19 +12,21 @@
 
 #include "lib_ft_printf.h"
 
-void	display_c(int c, int spaces, char f)
+void	display_c(int c, t_printf *tab)
 {
 	int l;
 	int total;
 
 	l = 1;
-	total = spaces - l;
+	total = tab->width - l;
 	ft_putchar_fd(c, 1);
-	if (f == '-')
+	tab->br++;
+	if (tab->flags == '-')
 	{
 		while (total > 0)
 		{
 			ft_putchar_fd(' ', 1);
+			tab->br++;
 			total--;
 		}
 	}

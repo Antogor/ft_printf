@@ -9,4 +9,9 @@ int		ft_conversion(t_printf *tab)
 		display_d(tab->d = va_arg(tab->args, int), tab);
 		return (tab->len);
 	}
+	else if (tab->type == 'c')
+	{
+		display_c(tab->c = va_arg(tab->args, int), tab);
+		return (tab->len);
+	}
 }
