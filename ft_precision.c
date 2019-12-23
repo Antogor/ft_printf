@@ -25,9 +25,8 @@ int		ft_precision(const char *s, t_printf *tab)
 	{
 		if (s[tab->len] >= '1' && s[tab->len] <= '9')
 		{
-			substr = ft_substr(s, 0, (q = ft_strlen_print_p(s, tab->len)));
+			substr = ft_substr(s, tab->len, (q = ft_strlen_print_p(s, tab->len)));
 			tab->precision = ft_atoi(substr);
-			tab->br = q;
 			free(substr);
 			substr = NULL;
 			tab->len += q;

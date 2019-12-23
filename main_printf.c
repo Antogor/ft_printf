@@ -9,8 +9,8 @@ int main ()
 	char *s = "hola";
 	int f;
 	int j;
-	f = ft_printf("%.2s\n", s);
-	j = printf("%.2s\n", s);
+	f = ft_printf("%-5.5sque\n", s);
+	j = printf("%-5.5sque\n", s);
 
 	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 /*	int u = 20;

@@ -40,12 +40,10 @@ void	display_s(char *s, t_printf *tab)
 	{
 		str = ft_substr(s, 0, tab->precision);
 		ft_putstr_fd(str, 1);
+		l = ft_strlen(str);
+		tab->br += l;
 		if ( tab->flags == '-')
-		{
-			l = ft_strlen(str);
-			tab->br += l;
 			put_spaces(str, l, tab->width, tab);
-		}
 		free(str);
 		str = NULL;
 	}
