@@ -4,13 +4,13 @@
 int main ()
 {
 	int x = 6;
-	int g = -343545432;
+	int g = -3;
 	char c = 'a';
 	char *s = "hola";
 	int f;
 	int j;
-	f = ft_printf("%u\n", g);
-	j = printf("%u\n", g);
+	f = ft_printf("%-20uque\n", g);
+	j = printf("%-20uque\n", g);
 
 	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 /*	int u = 20;

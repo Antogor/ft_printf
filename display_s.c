@@ -12,29 +12,11 @@
 
 #include "lib_ft_printf.h"
 
-void	put_spaces(char *s, size_t l, int spaces, t_printf *tab)
-{
-	int total;
-
-	if ((int)l < spaces)
-		total = spaces - l;
-	else
-		total = l - spaces;
-	if (spaces > (int)l)
-	{
-		while (total > 0)
-		{
-			ft_putchar_fd(' ', 1);
-			tab->br++;
-			total--;
-		}
-	}
-}
-
 void	display_s(char *s, t_printf *tab)
 {
 	char	*str;
 	size_t	l;
+	int		total;
 
 	if (tab->punt == '.')
 	{
@@ -43,7 +25,10 @@ void	display_s(char *s, t_printf *tab)
 		l = ft_strlen(str);
 		tab->br += l;
 		if ( tab->flags == '-')
-			put_spaces(str, l, tab->width, tab);
+		{
+			total = ft_total(l, tab->width);
+			ft_put_spaces(total, tab);
+		}
 		free(str);
 		str = NULL;
 	}
@@ -53,6 +38,9 @@ void	display_s(char *s, t_printf *tab)
 		l = ft_strlen(s);
 		tab->br += l;
 		if (tab->flags == '-')
-			put_spaces(s, l, tab->width, tab);
+		{
+			total = ft_total(l, tab->width);
+			ft_put_spaces(total, tab);
+		}
 	}
 }

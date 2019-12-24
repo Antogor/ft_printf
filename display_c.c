@@ -17,17 +17,12 @@ void	display_c(int c, t_printf *tab)
 	int l;
 	int total;
 
-	l = 1;
-	total = tab->width - l;
 	ft_putchar_fd(c, 1);
 	tab->br++;
 	if (tab->flags == '-')
 	{
-		while (total > 0)
-		{
-			ft_putchar_fd(' ', 1);
-			tab->br++;
-			total--;
-		}
+		l = 1;
+		total = tab->width - l;
+		ft_put_spaces(total, tab);
 	}
 }
