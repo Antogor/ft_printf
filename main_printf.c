@@ -4,7 +4,7 @@
 int main ()
 {
 	int x = 6;
-	int g = -2;
+	int g = -343545432;
 	char c = 'a';
 	char *s = "hola";
 	int f;

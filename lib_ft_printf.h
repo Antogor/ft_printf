@@ -42,6 +42,7 @@ int					ft_width(const char *s, t_printf *tab, int flags);
 int					ft_precision(const char *s, t_printf *tab);
 char				ft_type(const char *s, t_printf *tab);
 int					ft_conversion(t_printf *tab);
+char				*ft_itoi(unsigned int n);
 void				display_d(int d, t_printf *tab);
 void				display_c(int c, t_printf *tab);
 void				display_s(char *s, t_printf *tab);
