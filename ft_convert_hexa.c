@@ -12,7 +12,7 @@
 
 #include "lib_ft_printf.h"
 
-int		count_hexa(int nb)
+int		count_hexa(int nb, t_printf *tab)
 {
 	int n;
 	int len;
@@ -24,10 +24,11 @@ int		count_hexa(int nb)
 		n = n / 16;
 		len++;
 	}
+	tab->br += len;
 	return (len);
 }
 
-void	put_spaces_hex(int q, int total, char *hexanum, char c)
+/*void	put_spaces_hex(int q, int total, char *hexanum, char c)
 {
 	while (q >= 0)
 	{
@@ -46,9 +47,9 @@ void	put_spaces_hex(int q, int total, char *hexanum, char c)
 		ft_putchar_fd(' ', 1);
 		total--;
 	}
-}
+}*/
 
-void	put_zeros_hex(int q, int total, char *hexanum, char c)
+/*void	put_zeros_hex(int q, int total, char *hexanum, char c)
 {
 	while (total > 0)
 	{
@@ -67,9 +68,9 @@ void	put_zeros_hex(int q, int total, char *hexanum, char c)
 		}
 		q--;
 	}
-}
+}*/
 
-void	put_hexa(char *hexanum, int l, int spaces, char f, char c)
+/*void	put_hexa(char *hexanum, int l, int spaces, char f, char c)
 {
 	int		q;
 	size_t	len;
@@ -102,15 +103,15 @@ void	put_hexa(char *hexanum, int l, int spaces, char f, char c)
 	}
 	free(hexanum);
 	hexanum = NULL;
-}
+}*/
 
-void	convert_hexa(int nb, char c, int spaces, char f)
+char	*ft_convert_hexa(int nb, t_printf *tab)
 {
 	int		tmp;
 	int		l;
 	char	*hexanum;
 
-	hexanum = malloc(sizeof(char) * (count_hexa(nb) + 1));
+	hexanum = malloc(sizeof(char) * (count_hexa(nb, tab) + 1));
 	l = 0;
 	if (nb == 0)
 		hexanum[l++] = 48;
@@ -124,5 +125,5 @@ void	convert_hexa(int nb, char c, int spaces, char f)
 		nb = nb / 16;
 	}
 	hexanum[l] = '\0';
-	put_hexa(hexanum, l, spaces, f, c);
+	return (hexanum);
 }

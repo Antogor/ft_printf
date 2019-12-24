@@ -24,4 +24,9 @@ int		ft_conversion(t_printf *tab)
 		display_u(tab->u = va_arg(tab->args, unsigned int), tab);
 		return (tab->len);
 	}
+	else if (tab->type == 'x' || tab->type == 'X')
+	{
+		display_hexa(tab->hexa = va_arg(tab->args, int), tab);
+		return (tab->len);
+	}
 }
