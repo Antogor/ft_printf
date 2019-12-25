@@ -47,6 +47,7 @@ char				*ft_itoi(unsigned int n);
 int					ft_total(size_t l, int tam);
 void				ft_put_spaces(int total, t_printf *tab);
 void				ft_putzeros(int d, int total, t_printf *tab);
+void				ft_putzeros_char(int total, t_printf *tab);
 char				*ft_convert_hexa(int nb, t_printf *tab);
 void				display_d(int d, t_printf *tab);
 void				display_c(int c, t_printf *tab);
