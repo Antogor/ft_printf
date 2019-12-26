@@ -59,26 +59,3 @@ void				display_s(char *s, t_printf *tab);
 void				display_u(unsigned int nb, t_printf *tab);
 void				display_hexa(int h, t_printf *tab);
 #endif
-/*
-typedef struct	s_list_print
-{
-	va_list		flags;
-	char		c;
-	int			d;
-	char		*s;
-	int			h;
-	int			spaces;
-	int			precision;
-	char		f;
-	char		punt;
-}				t_print;
-
-int				ft_printf(const char *s, ...);
-void			write_case(const char *s, int l, t_print *type);
-int				check_flags(const char *s, int l,  t_print *flags);
-void			convert_hexa(int nb, char c, int spaces, char f);
-void			display_d(int d, int spaces, char f);
-void			display_c(int c, int spaces, char f);
-void			display_s(char *s, int spaces, char f, int precision, char punt);
-#endif
-*/

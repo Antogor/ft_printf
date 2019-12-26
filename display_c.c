@@ -27,7 +27,7 @@ void	display_c(int c, t_printf *tab)
 	int l;
 
 	l = 1;
-	if (tab->atx = '*')
+	if (tab->atx == '*')
 	{
 		ft_spaces_c(ft_total(l, tab->ali), tab);
 		ft_putchar_fd(c, 1);
@@ -36,9 +36,12 @@ void	display_c(int c, t_printf *tab)
 	else if (tab->flags == '-')
 	{
 		ft_putchar_fd(c, 1);
-		ft_spaces_c(ft_total(l, tab->width), tab);
 		tab->br++;
+		ft_spaces_c(ft_total(l, tab->width), tab);
 	}
 	else
+	{
 		ft_putchar_fd(c, 1);
+		tab->br++;
+	}
 }

@@ -5,17 +5,9 @@
 void	ft_comp(char *hexanum, t_printf *tab, size_t l)
 {
 	if (tab->flags == '-' && tab->width > (int)l)
-	{
-	//	total = ft_total(l, tab->width);
-	//	ft_putstr_fd(hexanum, 1);
 		ft_put_spaces_char(hexanum, l, tab);
-	}
 	else if (tab->flags == '0' && tab->width > (int)l)
-	{
-	//	total = ft_total(l, tab->width);
 		ft_putzeros_char(hexanum, l, tab);
-	//	ft_putstr_fd(hexanum, 1);
-	}
 	else if (tab->atx == '*' && tab->ali > (int)l)
 			ft_put_spaces_char(hexanum, l, tab);
 	else
