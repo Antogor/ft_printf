@@ -52,6 +52,7 @@ void				ft_put_spaces_char(char *s, size_t l, t_printf *tab);
 void				ft_putzeros(int d, size_t l, t_printf *tab);
 void				ft_putzeros_char(char *s, size_t l, t_printf *tab);
 char				*ft_convert_hexa(int nb, t_printf *tab);
+char				*ft_convert_hexa_neg(int nb, t_printf *tab);
 void				display_d(int d, t_printf *tab);
 void				display_c(int c, t_printf *tab);
 void				display_s(char *s, t_printf *tab);

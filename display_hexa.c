@@ -40,6 +40,12 @@ void	display_hexa(int h, t_printf *tab)
 	}
 	else
 	{
+		hexanum = ft_convert_hexa_neg(h, tab);
+		l = ft_strlen(hexanum);
+		tab->br += l;
+		if (tab->type == 'x')
+			put_lower(hexanum, l);
+		ft_comp(hexanum, tab, l);
 	}
 	free(hexanum);
 	hexanum = NULL;
