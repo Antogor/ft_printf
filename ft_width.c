@@ -21,7 +21,7 @@ int		ft_width(const char *s, t_printf *tab, int flags)
 	char *substr;
 	size_t q;
 
-	if (flags == '-' || flags == '0')
+	if (flags == '-' || flags == '0' || flags == 1)
 	{
 		if (s[tab->len] >= '1' && s[tab->len] <= '9')
 		{

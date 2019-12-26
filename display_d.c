@@ -24,8 +24,8 @@ void	display_d(int d, t_printf *tab)
 		ft_put_spaces(d, l, tab);
 	else if (tab->flags == '0' && tab->width > (int)l)
 		ft_putzeros(d, l, tab);
-	else if (tab->atx == '*' && tab->ali > (int)l)
-			ft_put_spaces(d, l, tab);
+	else if (tab->flags == 1 && tab->width > (int)l)
+		ft_put_spaces(d, l, tab);
 	else
 		ft_putnbr_fd(d, 1);
 }

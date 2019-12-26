@@ -27,9 +27,9 @@ void	display_c(int c, t_printf *tab)
 	int l;
 
 	l = 1;
-	if (tab->atx == '*')
+	if (tab->flags == 1)
 	{
-		ft_spaces_c(ft_total(l, tab->ali), tab);
+		ft_spaces_c(ft_total(l, tab->width), tab);
 		ft_putchar_fd(c, 1);
 		tab->br++;
 	}

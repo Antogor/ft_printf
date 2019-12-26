@@ -18,9 +18,9 @@ void	ft_put_normal(char *s, t_printf *tab)
 
 	l = ft_strlen(s);
 	tab->br += l;
-	if (tab->atx == '*')
+	if (tab->flags == 1 && tab->width > (int)l)
 		ft_put_spaces_char(s, l, tab);
-	else if (tab->flags == '-')
+	else if (tab->flags == '-' && tab->width > (int)l)
 		ft_put_spaces_char(s, l, tab);
 	else
 		ft_putstr_fd(s, 1);
@@ -34,9 +34,9 @@ void	ft_put_punt(char *s, t_printf *tab)
 	str = ft_substr(s, 0, tab->precision);
 	l = ft_strlen(str);
 	tab->br += l;
-	if ( tab->atx == '*')
-		ft_put_spaces_char(str, l, tab);
-	else if (tab->flags == '-')
+	if (tab->flags == 1 && tab->width > (int)l)
+			ft_put_spaces_char(str, l, tab);
+	else if (tab->flags == '-' && tab->width > (int)l)
 		ft_put_spaces_char(str, l, tab);
 	else
 		ft_putstr_fd(str, 1);

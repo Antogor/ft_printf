@@ -14,9 +14,9 @@ void	ft_spaces_char(int total, t_printf *tab)
 
 void	ft_put_spaces_char(char *s, size_t l, t_printf *tab)
 {
-	if (tab->atx == '*')
+	if (tab->flags == 1)
 	{
-		ft_spaces_char(ft_total(l, tab->ali), tab);
+		ft_spaces_char(ft_total(l, tab->width), tab);
 		ft_putstr_fd(s, 1);
 	}
 	else if (tab->flags == '-')

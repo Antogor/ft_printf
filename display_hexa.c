@@ -8,8 +8,8 @@ void	ft_comp(char *hexanum, t_printf *tab, size_t l)
 		ft_put_spaces_char(hexanum, l, tab);
 	else if (tab->flags == '0' && tab->width > (int)l)
 		ft_putzeros_char(hexanum, l, tab);
-	else if (tab->atx == '*' && tab->ali > (int)l)
-			ft_put_spaces_char(hexanum, l, tab);
+	else if (tab->flags == 1 && tab->width > (int)l)
+		ft_put_spaces_char(hexanum, l, tab);
 	else
 		ft_putstr_fd(hexanum, 1);
 }
