@@ -46,6 +46,7 @@ int					ft_atx(const char *s, t_printf *tab);
 char				ft_type(const char *s, t_printf *tab);
 void				ft_conversion(t_printf *tab);
 char				*ft_itoi(unsigned int n);
+long int			ft_atoa(const char *nptr);
 int					ft_total(size_t l, int tam);
 void				ft_put_spaces(int nb, size_t l, t_printf *tab);
 void				ft_put_spaces_char(char *s, size_t l, t_printf *tab);

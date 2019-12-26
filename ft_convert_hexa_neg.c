@@ -2,9 +2,21 @@
 
 #include "lib_ft_printf.h"
 
-int		count_hexa_neg(int nb, t_printf *tab)
+long int	ft_longint(int nb)
 {
-	int n;
+	char		*tmp;
+	long int	n;
+
+	tmp = ft_itoi(nb);
+	n = ft_atoa(tmp);
+	free(tmp);
+	tmp = NULL;
+	return (n);
+}
+
+int		count_hexa_neg(long int nb, t_printf *tab)
+{
+	long int n;
 	int len;
 
 	n = nb;
@@ -19,12 +31,12 @@ int		count_hexa_neg(int nb, t_printf *tab)
 
 char	*ft_convert_hexa_neg(int nb, t_printf *tab)
 {
-	int				tmp;
-	int				l;
-	char			*hexanum;
-	unsigned int	n;
+	long int n;
+	long int tmp;
+	char	*hexanum;
+	int		l;
 
-	n = nb;
+	n = ft_longint(nb);
 	l = count_hexa_neg(n, tab);
 	hexanum = malloc(sizeof(char) * l);
 	hexanum[l--] = '\0';
