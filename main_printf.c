@@ -9,7 +9,7 @@ int main ()
 	char *s = "hola";
 	int f;
 	int j;
-	f = ft_printf("%-*.*sque\n", 20, 2, s);
+	f = ft_printf("%*uque\n", 20, g);
 	j = printf("%*.2sque\n", 20, s);
 	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 /*	int u = 20;
