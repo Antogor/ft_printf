@@ -28,6 +28,6 @@ int		check_flags(const char *s, t_printf *tab)
 	tab->precision = ft_precision(s, tab);
 	tab->atx = ft_atx(s, tab);
 	tab->type = ft_type(s, tab);
-	tab->conversion = ft_conversion(tab);
+	ft_conversion(tab);
 	return (0);
 }	

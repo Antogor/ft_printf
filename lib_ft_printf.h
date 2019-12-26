@@ -33,7 +33,6 @@ typedef	struct		s_list_printf
 	int				atx;
 	int				ali;
 	int				type;
-	int				conversion;
 	int				len;
 }					t_printf;
 
@@ -45,7 +44,7 @@ int					ft_width(const char *s, t_printf *tab, int flags);
 int					ft_precision(const char *s, t_printf *tab);
 int					ft_atx(const char *s, t_printf *tab);
 char				ft_type(const char *s, t_printf *tab);
-int					ft_conversion(t_printf *tab);
+void				ft_conversion(t_printf *tab);
 char				*ft_itoi(unsigned int n);
 int					ft_total(size_t l, int tam);
 void				ft_put_spaces(int nb, size_t l, t_printf *tab);
