@@ -15,4 +15,6 @@ char		ft_type(const char *s, t_printf *tab)
 		return (s[tab->len]);
 	else if (s[tab->len] == 'X' || s[tab->len] == 'x')
 		return (s[tab->len]);
+	else if (s[tab->len] == '%')
+		display_c('%', tab);
 }
