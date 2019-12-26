@@ -24,9 +24,9 @@ int		check_flags(const char *s, t_printf *tab)
 		if (tab->flags == -1)
 			return (-1);
 	tab->width = ft_width(s, tab, tab->flags);
+	tab->atx = ft_atx(s, tab);
 	tab->punt = ft_punt(s, tab);
 	tab->precision = ft_precision(s, tab);
-	tab->atx = ft_atx(s, tab);
 	tab->type = ft_type(s, tab);
 	ft_conversion(tab);
 	return (0);

@@ -34,9 +34,9 @@ void	ft_put_punt(char *s, t_printf *tab)
 	str = ft_substr(s, 0, tab->precision);
 	l = ft_strlen(str);
 	tab->br += l;
-	if ( tab->flags == '-')
+	if ( tab->atx == '*')
 		ft_put_spaces_char(str, l, tab);
-	else if (tab->atx == '*')
+	else if (tab->flags == '-')
 		ft_put_spaces_char(str, l, tab);
 	else
 		ft_putstr_fd(str, 1);
