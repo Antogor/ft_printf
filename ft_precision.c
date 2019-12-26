@@ -31,6 +31,11 @@ int		ft_precision(const char *s, t_printf *tab)
 			substr = NULL;
 			tab->len += q;
 		}
+		else if (s[tab->len] == '*')
+		{
+			tab->precision = va_arg(tab->args, int);
+			tab->len++;
+		}
 	}
 	return (tab->precision);
 }

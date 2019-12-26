@@ -31,6 +31,11 @@ int		ft_width(const char *s, t_printf *tab, int flags)
 			substr = NULL;
 			tab->len += q;
 		}
+		else if (s[tab->len] == '*')
+		{
+			tab->width = va_arg(tab->args, int);
+			tab->len++;
+		}
 	}
 	return (tab->width);
 }

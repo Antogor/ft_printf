@@ -12,17 +12,33 @@
 
 #include "lib_ft_printf.h"
 
+void	ft_spaces_c(int total, t_printf *tab)
+{
+	while (total > 0)
+	{
+		ft_putchar_fd(' ', 1);
+		tab->br++;
+		total--;
+	}
+}
+
 void	display_c(int c, t_printf *tab)
 {
 	int l;
-	int total;
 
-	ft_putchar_fd(c, 1);
-	tab->br++;
-	if (tab->flags == '-')
+	l = 1;
+	if (tab->atx = '*')
 	{
-		l = 1;
-		total = tab->width - l;
-		ft_put_spaces(total, tab);
+		ft_spaces_c(ft_total(l, tab->ali), tab);
+		ft_putchar_fd(c, 1);
+		tab->br++;
 	}
+	else if (tab->flags == '-')
+	{
+		ft_putchar_fd(c, 1);
+		ft_spaces_c(ft_total(l, tab->width), tab);
+		tab->br++;
+	}
+	else
+		ft_putchar_fd(c, 1);
 }

@@ -16,22 +16,16 @@ void	display_d(int d, t_printf *tab)
 {
 	char	*q;
 	size_t	l;
-	int		total;
 
 	q = ft_itoa(d);
 	l = ft_strlen(q);
 	tab->br += l;
 	if (tab->flags == '-' && tab->width > (int)l)
-	{
-		ft_putnbr_fd(d, 1);
-		total = ft_total(l, tab->width);
-		ft_put_spaces(total, tab);
-	}
+		ft_put_spaces(d, l, tab);
 	else if (tab->flags == '0' && tab->width > (int)l)
-	{
-		total = ft_total(l, tab->width);
-		ft_putzeros(d, total, tab);
-	}
+		ft_putzeros(d, l, tab);
+	else if (tab->atx == '*' && tab->ali > (int)l)
+			ft_put_spaces(d, l, tab);
 	else
 		ft_putnbr_fd(d, 1);
 }
