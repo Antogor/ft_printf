@@ -3,14 +3,14 @@
 
 int main ()
 {
-	int x = 120;
+	int x = -120;
 	int g = -3;
 	char c = 'a';
 	char *s = "hola";
 	int f;
 	int j;
-	f = ft_printf("%20xque\n", x);
-	j = printf("%-2sque\n", s);
+	f = ft_printf("%*pque\n", 20, &x);
+	j = printf("%0*xque\n", 20, x);
 	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 /*	int u = 20;
 	char c = 'a';

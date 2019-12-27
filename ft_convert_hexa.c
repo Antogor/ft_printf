@@ -14,7 +14,7 @@
 
 int		count_hexa(int nb, t_printf *tab)
 {
-	int n;
+	unsigned long int n;
 	int len;
 
 	n = nb;
@@ -32,6 +32,7 @@ char	*ft_convert_hexa(int nb, t_printf *tab)
 	int		tmp;
 	int		l;
 	char	*hexanum;
+
 
 	l = count_hexa(nb, tab);
 	hexanum = malloc(sizeof(char) * l);

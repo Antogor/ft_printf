@@ -26,6 +26,7 @@ typedef	struct		s_list_printf
 	char			*s;
 	unsigned int	u;
 	int				hexa;
+	long int		p;
 	int				flags;
 	int				punt;
 	int				precision;
@@ -42,7 +43,7 @@ int					ft_width(const char *s, t_printf *tab, int flags);
 int					ft_precision(const char *s, t_printf *tab);
 char				ft_type(const char *s, t_printf *tab);
 void				ft_conversion(t_printf *tab);
-char				*ft_itoi(unsigned int n);
+char				*ft_itoi(unsigned long int n);
 long int			ft_atoa(const char *nptr);
 int					ft_total(size_t l, int tam);
 void				ft_put_spaces(int nb, size_t l, t_printf *tab);
@@ -51,9 +52,11 @@ void				ft_putzeros(int d, size_t l, t_printf *tab);
 void				ft_putzeros_char(char *s, size_t l, t_printf *tab);
 char				*ft_convert_hexa(int nb, t_printf *tab);
 char				*ft_convert_hexa_neg(int nb, t_printf *tab);
+char				*ft_convert_memory(long int nb, t_printf *tab);
 void				display_d(int d, t_printf *tab);
 void				display_c(int c, t_printf *tab);
 void				display_s(char *s, t_printf *tab);
 void				display_u(unsigned int nb, t_printf *tab);
 void				display_hexa(int h, t_printf *tab);
+void				display_p(long int p, t_printf *tab);
 #endif

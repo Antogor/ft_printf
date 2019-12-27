@@ -14,4 +14,6 @@ void	ft_conversion(t_printf *tab)
 		display_u(tab->u = va_arg(tab->args, unsigned int), tab);
 	else if (tab->type == 'x' || tab->type == 'X')
 		display_hexa(tab->hexa = va_arg(tab->args, int), tab);
+	else if (tab->type == 'p')
+		display_p(tab->p = va_arg(tab->args, long int), tab);
 }

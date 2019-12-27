@@ -2,7 +2,7 @@
 
 #include "lib_ft_printf.h"
 
-int		ft_count_unb(unsigned int nb)
+int		ft_count_unb(unsigned long int nb)
 {
 	int				count;
 	unsigned int	c;
@@ -34,7 +34,7 @@ void	ft_putnum_un(char *s, unsigned int n, int l)
 	}
 }
 
-char	*ft_itoi(unsigned int n)
+char	*ft_itoi(unsigned long int n)
 {
 	char	*new;
 	int		l;
