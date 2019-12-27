@@ -17,8 +17,9 @@ int		ft_flags(const char *s, t_printf *tab)
 	}
 	else if (s[tab->len] >= '1' && s[tab->len] <= '9' || s[tab->len] == '*')
 		return (1);
-	else if (s[tab->len] == '-' && s[tab->len + 1] == '0' 
-			|| s[tab->len] == '0' && s[tab->len + 1] == '-')
+	else if (s[tab->len] == '-' && (s[tab->len + 1] == '0' || s[tab->len] == '*')
+			|| s[tab->len] == '0' && (s[tab->len + 1] == '-' || s[tab->len] == '*')
+			|| s[tab->len] == '*' && (s[tab->len + 1] == '-' || s[tab->len] == '0'))
 			return (-1);
 	return (0);
 }

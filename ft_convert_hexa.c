@@ -14,8 +14,8 @@
 
 int		count_hexa(int nb, t_printf *tab)
 {
-	unsigned long int n;
-	int len;
+	unsigned long int	n;
+	int					len;
 
 	n = nb;
 	len = 0;

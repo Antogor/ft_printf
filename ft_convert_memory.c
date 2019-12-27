@@ -4,8 +4,8 @@
 
 int		count_memory(long int nb, t_printf *tab)
 {
-	long int n;
-	int len;
+	long int	n;
+	int			len;
 
 	n = nb;
 	len = 0;
@@ -19,9 +19,9 @@ int		count_memory(long int nb, t_printf *tab)
 
 char	*ft_convert_memory(long int nb, t_printf *tab)
 {
-	long int tmp;
-	char	*memory;
-	int		l;
+	long int	tmp;
+	char		*memory;
+	int			l;
 
 	l = count_memory(nb, tab) + 2;
 	memory = malloc(sizeof(char) * l);

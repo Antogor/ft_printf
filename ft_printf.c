@@ -12,17 +12,10 @@
 
 #include "lib_ft_printf.h"
 
-int		ft_printf(const char *s, ...)
+void	to_printf(const char *s, t_printf *tab)
 {
-	int			br;
-	int			err;
-	t_printf	*tab;
+	int err;
 
-	if (!(tab = (t_printf*)malloc(sizeof(t_printf))))
-		return (-1);
-	va_start(tab->args, s);
-	tab->len = 0;
-	br = 0;
 	while (s[tab->len] != '\0')
 	{
 		if (s[tab->len] != '%')
@@ -33,12 +26,23 @@ int		ft_printf(const char *s, ...)
 		else
 		{
 			tab->len++;
-			err = check_flags(s, tab);
-			if (err == -1)
-				return (-1);
+			err = check_flags(s, tab);		
 		}
 		tab->len++;
 	}
+}
+
+int		ft_printf(const char *s, ...)
+{
+	int			br;
+	t_printf	*tab;
+
+	if (!(tab = (t_printf*)malloc(sizeof(t_printf))))
+		return (-1);
+	va_start(tab->args, s);
+	tab->len = 0;
+	br = 0;
+	to_printf(s, tab);
 	br += tab->br;
 	free(tab);
 	tab = NULL;

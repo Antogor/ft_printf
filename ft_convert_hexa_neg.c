@@ -16,8 +16,8 @@ long int	ft_longint(int nb)
 
 int		count_hexa_neg(long int nb, t_printf *tab)
 {
-	long int n;
-	int len;
+	long int	n;
+	int			len;
 
 	n = nb;
 	len = 0;
@@ -31,10 +31,10 @@ int		count_hexa_neg(long int nb, t_printf *tab)
 
 char	*ft_convert_hexa_neg(int nb, t_printf *tab)
 {
-	long int n;
-	long int tmp;
-	char	*hexanum;
-	int		l;
+	long int	n;
+	long int	tmp;
+	char		*hexanum;
+	int			l;
 
 	n = ft_longint(nb);
 	l = count_hexa_neg(n, tab);

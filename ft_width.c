@@ -18,8 +18,8 @@ size_t	ft_strlen_print_f(const char *s, int l)
 
 int		ft_width(const char *s, t_printf *tab, int flags)
 {
-	char *substr;
-	size_t q;
+	char	*substr;
+	size_t	q;
 
 	if (flags == '-' || flags == '0' || flags == 1)
 	{
