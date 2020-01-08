@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:43:24 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 10:43:38 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 11:17:32 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-int		count_memory(long int nb, t_printf *tab)
+int		count_memory(long int nb)
 {
 	long int	n;
 	int			len;
@@ -27,13 +27,13 @@ int		count_memory(long int nb, t_printf *tab)
 	return (len);
 }
 
-char	*ft_convert_memory(long int nb, t_printf *tab)
+char	*ft_convert_memory(long int nb)
 {
 	long int	tmp;
 	char		*memory;
 	int			l;
 
-	l = count_memory(nb, tab) + 2;
+	l = count_memory(nb) + 2;
 	memory = malloc(sizeof(char) * l);
 	memory[0] = '0';
 	memory[1] = 'x';

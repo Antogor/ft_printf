@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:44:04 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 10:58:40 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 11:14:24 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int		ft_flags(const char *s, t_printf *tab)
 		tab->len++;
 		return ('0');
 	}
-	else if (s[tab->len] >= '1' && s[tab->len] <= '9' || s[tab->len] == '*')
+	else if ((s[tab->len] >= '1' && s[tab->len] <= '9') || s[tab->len] == '*')
 		return (1);
-	else if (s[tab->len] == '-' && (s[tab->len + 1] == '0'
-	|| s[tab->len] == '*') || s[tab->len] == '0'
-	&& (s[tab->len + 1] == '-' || s[tab->len] == '*')
-	|| s[tab->len] == '*' && (s[tab->len + 1] == '-'
-	|| s[tab->len] == '0'))
+	else if ((s[tab->len] == '-' && (s[tab->len + 1] == '0'
+	|| s[tab->len] == '*')) || (s[tab->len] == '0'
+	&& (s[tab->len + 1] == '-' || s[tab->len] == '*'))
+	|| (s[tab->len] == '*' && (s[tab->len + 1] == '-'
+	|| s[tab->len] == '0')))
 		return (-1);
 	return (0);
 }

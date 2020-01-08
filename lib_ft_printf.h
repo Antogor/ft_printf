@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:06:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 11:07:03 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 11:17:56 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void				ft_put_spaces(int nb, size_t l, t_printf *tab);
 void				ft_put_spaces_char(char *s, size_t l, t_printf *tab);
 void				ft_putzeros(int d, size_t l, t_printf *tab);
 void				ft_putzeros_char(char *s, size_t l, t_printf *tab);
-char				*ft_convert_hexa(int nb, t_printf *tab);
-char				*ft_convert_hexa_neg(int nb, t_printf *tab);
-char				*ft_convert_memory(long int nb, t_printf *tab);
+char				*ft_convert_hexa(int nb);
+char				*ft_convert_hexa_neg(int nb);
+char				*ft_convert_memory(long int nb);
 void				display_d(int d, t_printf *tab);
 void				display_c(int c, t_printf *tab);
 void				display_s(char *s, t_printf *tab);

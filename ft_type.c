@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:49:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 10:50:02 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 11:15:12 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ char		ft_type(const char *s, t_printf *tab)
 		display_c('%', tab);
 	else if (s[tab->len == 'p'])
 		return (s[tab->len]);
+	return (-1);
 }

@@ -9,8 +9,8 @@ int main ()
 	char *s = "hola";
 	int f;
 	int j;
-	f = ft_printf("Esta es la prueba para sacar e100%% y\n%-*sque, y la letra: %c, y el numero con x: %010x y con i: %i, su hex: %-*Xhex, el negativo: %u, y su dire:\n%*p\n y volver a x: %x\n", 5, s, c, x, x, 10, x, x, 20, &x, x);
-	j = printf("Esta es la prueba para sacar e100%% y\n%-*sque, y la letra: %c, y el numero con x: %010x y con i: %i, su hex: %-*Xhex, el negativo: %u, y su dire:\n%*p\n y volver a x: %x\n", 5, s, c, x, x, 10, x, x, 20, &x, x);
+	f = ft_printf("hola");
+	j = printf("hola");
 	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 /*	int u = 20;
 	char c = 'a';

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:39:00 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 10:39:16 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 11:16:58 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	display_hexa(int h, t_printf *tab)
 
 	if (h >= 0)
 	{
-		hexanum = ft_convert_hexa(h, tab);
+		hexanum = ft_convert_hexa(h);
 		l = ft_strlen(hexanum);
 		tab->br += l;
 		if (tab->type == 'x')
@@ -50,7 +50,7 @@ void	display_hexa(int h, t_printf *tab)
 	}
 	else
 	{
-		hexanum = ft_convert_hexa_neg(h, tab);
+		hexanum = ft_convert_hexa_neg(h);
 		l = ft_strlen(hexanum);
 		tab->br += l;
 		if (tab->type == 'x')

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:02:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 11:09:36 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 11:22:44 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int		ft_printf(const char *s, ...)
 		return (-1);
 	va_start(tab->args, s);
 	tab->len = 0;
+	tab->br = 0;
 	br = 0;
 	to_printf(s, tab);
 	br += tab->br;

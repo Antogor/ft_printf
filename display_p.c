@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:39:46 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 10:39:55 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 11:18:17 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	display_p(long int p, t_printf *tab)
 	char	*memory;
 	size_t	l;
 
-	memory = ft_convert_memory(p, tab);
+	memory = ft_convert_memory(p);
 	l = ft_strlen(memory);
 	tab->br += l;
 	if (tab->flags == '-' && tab->width > (int)l)

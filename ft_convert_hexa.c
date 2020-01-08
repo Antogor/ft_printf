@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:04:48 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 11:07:40 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 11:11:47 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-int		count_hexa(int nb, t_printf *tab)
+int		count_hexa(int nb)
 {
 	unsigned long int	n;
 	int					len;
@@ -27,13 +27,13 @@ int		count_hexa(int nb, t_printf *tab)
 	return (len);
 }
 
-char	*ft_convert_hexa(int nb, t_printf *tab)
+char	*ft_convert_hexa(int nb)
 {
 	int		tmp;
 	int		l;
 	char	*hexanum;
 
-	l = count_hexa(nb, tab);
+	l = count_hexa(nb);
 	hexanum = malloc(sizeof(char) * l);
 	hexanum[l--] = '\0';
 	if (nb == 0)
