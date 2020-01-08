@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_spaces.c                                    :+:      :+:    :+:   */
+/*   ft_put_precision_char.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 10:47:22 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 17:05:52 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/01/08 16:39:24 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/01/08 17:48:51 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-void	ft_spaces(int total, t_printf *tab)
+void	ft_spaces_precision(int total, t_printf *tab)
 {
 	while (total > 0)
 	{
@@ -22,16 +22,18 @@ void	ft_spaces(int total, t_printf *tab)
 	}
 }
 
-void	ft_put_spaces(int nb, size_t l, t_printf *tab)
+void	ft_put_precision_char(char *s, size_t len, t_printf *tab)
 {
-	if (tab->flags == 1)
+	int l;
+
+	if (tab->width > (int)len)
 	{
-		ft_spaces(ft_total(l, tab->width), tab);
-		ft_putnbr_fd(nb, 1);
+		l = ft_total(len, tab->precision);
+		ft_spaces_precision(ft_total(l += len, tab->width), tab);
 	}
-	else if (tab->flags == '-')
+	else
 	{
-		ft_putnbr_fd(nb, 1);
-		ft_spaces(ft_total(l, tab->width), tab);
-	}
+		l = len;
+		ft_putzeros_char(s, l, tab);
+	}	
 }
