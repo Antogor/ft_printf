@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:03:32 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 17:52:38 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 17:57:06 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,16 @@ void	display_d(int d, t_printf *tab)
 	else if (tab->flags == '-' && tab->width > (int)l)
 		ft_put_spaces_char(q, l, tab);
 	else if (tab->flags == '0' && tab->width > (int)l)
-		ft_putzeros(d, l, tab);
+	{
+		if (d < 0)
+		ft_putchar_fd(*q, 1);
+		q++;
+		ft_putzeros_char(q, l, tab);
+	}
 	else if (tab->punt == '.' && tab->precision > (int)l)
 		ft_putzeros(d, l, tab);
 	else if (tab->flags == 1 && tab->width > (int)l)
 		ft_put_spaces(d, l, tab);
 	else
-		ft_putnbr_fd(d, 1);
+		ft_putstr_fd(q, 1);
 }
