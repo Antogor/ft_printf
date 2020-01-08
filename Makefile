@@ -32,7 +32,7 @@ $(NAME): $(OBJS_PRINT) $(OBJS_LIB) lib_ft_printf.h ../Libreria/libft.h
 	@ranlib $(NAME)
 
 clean:
-	@rm -f $(OBJS_PRINT) $(OBJS_LIB)
+	@rm -f $(OBJS_PRINT) $(OBJS_LIB) *.o
 
 fclean: clean
 	@rm -f $(NAME)
