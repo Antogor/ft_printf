@@ -1,5 +1,14 @@
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_width.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/08 10:50:30 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/01/08 10:56:53 by agarzon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
@@ -25,7 +34,8 @@ int		ft_width(const char *s, t_printf *tab, int flags)
 	{
 		if (s[tab->len] >= '1' && s[tab->len] <= '9')
 		{
-			substr = ft_substr(s, tab->len, (q = ft_strlen_print_f(s, tab->len)));
+			substr = ft_substr(s, tab->len,
+					(q = ft_strlen_print_f(s, tab->len)));
 			tab->width = ft_atoi(substr);
 			free(substr);
 			substr = NULL;

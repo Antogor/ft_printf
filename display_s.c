@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/20 11:04:28 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/20 11:12:05 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/01/08 11:05:25 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/01/08 11:08:01 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_put_punt(char *s, t_printf *tab)
 	l = ft_strlen(str);
 	tab->br += l;
 	if (tab->flags == 1 && tab->width > (int)l)
-			ft_put_spaces_char(str, l, tab);
+		ft_put_spaces_char(str, l, tab);
 	else if (tab->flags == '-' && tab->width > (int)l)
 		ft_put_spaces_char(str, l, tab);
 	else

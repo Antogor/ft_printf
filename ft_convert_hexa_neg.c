@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_convert_hexa_neg.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/08 10:42:37 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/01/08 10:55:13 by agarzon-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
@@ -14,7 +24,7 @@ long int	ft_longint(int nb)
 	return (n);
 }
 
-int		count_hexa_neg(long int nb, t_printf *tab)
+int			count_hexa_neg(long int nb, t_printf *tab)
 {
 	long int	n;
 	int			len;
@@ -29,7 +39,7 @@ int		count_hexa_neg(long int nb, t_printf *tab)
 	return (len);
 }
 
-char	*ft_convert_hexa_neg(int nb, t_printf *tab)
+char		*ft_convert_hexa_neg(int nb, t_printf *tab)
 {
 	long int	n;
 	long int	tmp;

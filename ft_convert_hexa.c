@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_hexa.c                                     :+:      :+:    :+:   */
+/*   ft_convert_hexa.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/13 11:12:06 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/20 11:01:40 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/01/08 11:04:48 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/01/08 11:07:40 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ char	*ft_convert_hexa(int nb, t_printf *tab)
 	int		tmp;
 	int		l;
 	char	*hexanum;
-
 
 	l = count_hexa(nb, tab);
 	hexanum = malloc(sizeof(char) * l);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/05 10:53:36 by agarzon-          #+#    #+#             */
-/*   Updated: 2019/12/20 12:13:59 by agarzon-         ###   ########.fr       */
+/*   Created: 2020/01/08 11:02:10 by agarzon-          #+#    #+#             */
+/*   Updated: 2020/01/08 11:09:36 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	to_printf(const char *s, t_printf *tab)
 		else
 		{
 			tab->len++;
-			err = check_flags(s, tab);		
+			err = check_flags(s, tab);
 		}
 		tab->len++;
 	}
