@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:02:55 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 11:08:22 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 12:05:30 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ int		check_flags(const char *s, t_printf *tab)
 	tab->width = 0;
 	tab->type = 0;
 	tab->flags = ft_flags(s, tab);
-	if (tab->flags == -1)
-		return (-1);
 	tab->width = ft_width(s, tab, tab->flags);
 	tab->punt = ft_punt(s, tab);
 	tab->precision = ft_precision(s, tab);
