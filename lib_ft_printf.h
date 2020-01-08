@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:06:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 11:17:56 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 13:15:26 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdio.h>
-# include "../Libreria/libft.h"
+# include "./libft/libft.h"
 
 typedef	struct		s_list_printf
 {

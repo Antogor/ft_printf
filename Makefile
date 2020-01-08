@@ -10,9 +10,9 @@ FUN_PRINT = ft_printf.c check_flags.c ft_convert_hexa.c  display_d.c display_c.c
 			display_hexa.c ft_putzeros_char.c ft_put_spaces_char.c ft_convert_hexa_neg.c \
 			ft_atoa.c display_p.c ft_convert_memory.c
 
-FUN_LIB = ../Libreria/ft_putchar_fd.c ../Libreria/ft_putnbr_fd.c ../Libreria/ft_putstr_fd.c \
-			../Libreria/ft_atoi.c ../Libreria/ft_substr.c ../Libreria/ft_strlen.c \
-			../Libreria/ft_itoa.c ../Libreria/ft_tolower.c ../Libreria/ft_toupper.c
+FUN_LIB = ./libft/ft_putchar_fd.c ./libft/ft_putnbr_fd.c ./libft/ft_putstr_fd.c \
+			./libft/ft_atoi.c ./libft/ft_substr.c ./libft/ft_strlen.c ./libft/ft_itoa.c \
+			./libft/ft_tolower.c ./libft/ft_toupper.c
 
 OBJS_PRINT = ft_printf.o check_flags.o ft_convert_hexa.o display_d.o display_c.o \
 			display_s.o ft_flags.o ft_width.o ft_type.o ft_conversion.o ft_punt.o \
@@ -20,13 +20,13 @@ OBJS_PRINT = ft_printf.o check_flags.o ft_convert_hexa.o display_d.o display_c.o
 			display_hexa.o ft_putzeros_char.o ft_put_spaces_char.o ft_convert_hexa_neg.o \
 			ft_atoa.o display_p.o ft_convert_memory.o
 
-OBJS_LIB = ../Libreria/ft_putchar_fd.o ../Libreria/ft_putnbr_fd.o ../Libreria/ft_putstr_fd.o \
-			../Libreria/ft_atoi.o ../Libreria/ft_substr.o ../Libreria/ft_strlen.o \
-			../Libreria/ft_itoa.o ../Libreria/ft_tolower.o ../Libreria/ft_toupper.o
+OBJS_LIB = ./libft/ft_putchar_fd.o ./libft/ft_putnbr_fd.o ./libft/ft_putstr_fd.o \
+			./libft/ft_atoi.o ./libft/ft_substr.o ./libft/ft_strlen.o ./libft/ft_itoa.o \
+			./libft/ft_tolower.o ./libft/ft_toupper.o
 
 all: $(NAME)
 
-$(NAME): $(OBJS_PRINT) $(OBJS_LIB) lib_ft_printf.h ../Libreria/libft.h
+$(NAME): $(OBJS_PRINT) $(OBJS_LIB) lib_ft_printf.h ./libft/libft.h
 	@gcc $(CFLAGS) $(FUN_PRINT) $(FUN_LIB)
 	@ar rc $(NAME) $(OBJS_PRINT) $(OBJS_LIB)
 	@ranlib $(NAME)
