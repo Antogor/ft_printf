@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:05:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 11:08:01 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 18:09:57 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	ft_put_normal(char *s, t_printf *tab)
 	l = ft_strlen(s);
 	tab->br += l;
 	if (tab->flags == 1 && tab->width > (int)l)
-		ft_put_spaces_char(s, l, tab);
+		ft_put_spaces(s, l, tab);
 	else if (tab->flags == '-' && tab->width > (int)l)
-		ft_put_spaces_char(s, l, tab);
+		ft_put_spaces(s, l, tab);
 	else
 		ft_putstr_fd(s, 1);
 }
@@ -35,9 +35,9 @@ void	ft_put_punt(char *s, t_printf *tab)
 	l = ft_strlen(str);
 	tab->br += l;
 	if (tab->flags == 1 && tab->width > (int)l)
-		ft_put_spaces_char(str, l, tab);
+		ft_put_spaces(str, l, tab);
 	else if (tab->flags == '-' && tab->width > (int)l)
-		ft_put_spaces_char(str, l, tab);
+		ft_put_spaces(str, l, tab);
 	else
 		ft_putstr_fd(str, 1);
 	free(str);

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:39:00 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 17:35:46 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/08 18:20:38 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	ft_comp(char *hexanum, t_printf *tab, size_t l)
 		tab->flags >= '9')))
 		ft_put_precision_char(hexanum, l, tab);
 	else if (tab->flags == '-' && tab->width > (int)l)
-		ft_put_spaces_char(hexanum, l, tab);
+		ft_put_spaces(hexanum, l, tab);
 	else if (tab->flags == '0' && tab->width > (int)l)
-		ft_putzeros_char(hexanum, l, tab);
+		ft_putzeros(hexanum, l, tab);
 	else if (tab->flags == 1 && tab->width > (int)l)
-		ft_put_spaces_char(hexanum, l, tab);
+		ft_put_spaces(hexanum, l, tab);
 	else if (tab->punt == '.' && tab->precision > (int)l)
-		ft_putzeros_char(hexanum, l, tab);
+		ft_putzeros(hexanum, l, tab);
 	else
 		ft_putstr_fd(hexanum, 1);
 }
