@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:06:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 18:12:00 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/09 12:58:17 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ void				ft_conversion(t_printf *tab);
 char				*ft_itoi(unsigned long int n);
 long int			ft_atoa(const char *nptr);
 int					ft_total(size_t l, int tam);
-void				ft_put_spaces(char *s, size_t l, t_printf *tab);
-void				ft_putzeros(char *s, size_t l, t_printf *tab);
-void				ft_put_precision(int nb, size_t len, t_printf *tab);
-void				ft_put_precision_char(char *s, size_t len, t_printf *tab);
+void				ft_put_spaces(int total, t_printf *tab);
+void				ft_putzeros(int total, t_printf *tab);
+void				ft_put_precision(char *s, int nb, size_t len,
+					t_printf *tab);
 char				*ft_convert_hexa(int nb);
 char				*ft_convert_hexa_neg(int nb);
 char				*ft_convert_memory(long int nb);

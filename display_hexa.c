@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:39:00 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 18:20:38 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/09 12:57:53 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 void	ft_comp(char *hexanum, t_printf *tab, size_t l)
 {
-	if (tab->punt == '.' && (tab->flags == '0' || (tab->flags <= '1' &&
-		tab->flags >= '9')))
-		ft_put_precision_char(hexanum, l, tab);
-	else if (tab->flags == '-' && tab->width > (int)l)
-		ft_put_spaces(hexanum, l, tab);
-	else if (tab->flags == '0' && tab->width > (int)l)
-		ft_putzeros(hexanum, l, tab);
-	else if (tab->flags == 1 && tab->width > (int)l)
-		ft_put_spaces(hexanum, l, tab);
-	else if (tab->punt == '.' && tab->precision > (int)l)
-		ft_putzeros(hexanum, l, tab);
+	if (tab->punt == '.' && (tab->flags == '-' || tab->flags == '0' ||
+		tab->flags == 1))
+		ft_put_precision(hexanum, 0, l, tab);
 	else
+	{
+		if (tab->flags == '0' && tab->width > (int)l)
+			ft_putzeros(ft_total(l, tab->width), tab);
+		else if (tab->flags == 1 && tab->width > (int)l)
+			ft_put_spaces(ft_total(l, tab->width), tab);
+		else if (tab->punt == '.' && tab->precision > (int)l)
+			ft_putzeros(ft_total(l, tab->precision), tab);
 		ft_putstr_fd(hexanum, 1);
+		if (tab->flags == '-' && tab->width > (int)l)
+			ft_put_spaces(ft_total(l, tab->width), tab);
+	}
 }
 
 void	put_lower(char *s, size_t l)

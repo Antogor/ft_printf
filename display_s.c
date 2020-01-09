@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:05:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 18:09:57 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/09 11:20:35 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ void	ft_put_normal(char *s, t_printf *tab)
 	l = ft_strlen(s);
 	tab->br += l;
 	if (tab->flags == 1 && tab->width > (int)l)
-		ft_put_spaces(s, l, tab);
-	else if (tab->flags == '-' && tab->width > (int)l)
-		ft_put_spaces(s, l, tab);
-	else
-		ft_putstr_fd(s, 1);
+		ft_put_spaces(ft_total(l, tab->width), tab);
+	ft_putstr_fd(s, 1);
+	if (tab->flags == '-' && tab->width > (int)l)
+		ft_put_spaces(ft_total(l, tab->width), tab);
 }
 
 void	ft_put_punt(char *s, t_printf *tab)
@@ -35,11 +34,10 @@ void	ft_put_punt(char *s, t_printf *tab)
 	l = ft_strlen(str);
 	tab->br += l;
 	if (tab->flags == 1 && tab->width > (int)l)
-		ft_put_spaces(str, l, tab);
-	else if (tab->flags == '-' && tab->width > (int)l)
-		ft_put_spaces(str, l, tab);
-	else
-		ft_putstr_fd(str, 1);
+		ft_put_spaces(ft_total(l, tab->width), tab);
+	ft_putstr_fd(str, 1);
+	if (tab->flags == '-' && tab->width > (int)l)
+		ft_put_spaces(ft_total(l, tab->width), tab);
 	free(str);
 	str = NULL;
 }
