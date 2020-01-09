@@ -6,26 +6,19 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 16:39:24 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/09 13:30:57 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/09 14:22:20 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
-
-int		ft_comp_negative(int nb)
-{
-	if (nb < 0)
-		return (1);
-	return (0);
-}
 
 void	chase_nb(char *s, int nb, size_t len, t_printf *tab)
 {
 	int l;
 	int ls;
 
-	l = ft_comp_negative(nb);
-	ls = ft_comp_negative(nb);
+	l = nb < 0 ? 1 : 0;
+	ls = nb < 0 ? 1 : 0;
 	if (tab->precision >= (int)len)
 	{
 		l += ft_total(len, tab->precision);
