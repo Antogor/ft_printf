@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:03:32 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/09 13:21:30 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/09 15:25:15 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,37 @@ void	negative_chase(int d, char *s, t_printf *tab, size_t l)
 {
 	int lz;
 
-	lz = 0;
+	lz = 1;
 	if (d < 0)
 	{
 		ft_putchar_fd(*s, 1);
 		s++;
-		lz += 1;
+		lz += l;
 	}
 	else
 		lz = l;
 	if (tab->flags == '0')
 		ft_putzeros(ft_total(lz, tab->width), tab);
 	else if (tab->punt == '.')
+	{
+		lz -= d < 0 ? 1 : 0;
 		ft_putzeros(ft_total(lz, tab->precision), tab);
+	}
 	ft_putstr_fd(s, 1);
 }
 
 void	chase_normal(int d, char *q, t_printf *tab, size_t l)
 {
 	if (tab->flags == '0' && tab->width > (int)l)
+	{
+		l -= d < 0 ? 1 : 0;
 		negative_chase(d, q, tab, l);
+	}
 	else if (tab->punt == '.' && tab->precision > (int)l)
+	{
+		l -= d < 0 ? 1 : 0;
 		negative_chase(d, q, tab, l);
+	}
 	else if (tab->flags == 1 && tab->width > (int)l)
 	{
 		ft_put_spaces(ft_total(l, tab->width), tab);
