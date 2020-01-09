@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 16:39:24 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/09 13:29:23 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/09 13:30:57 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ int		ft_comp_negative(int nb)
 {
 	if (nb < 0)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
 
 void	chase_nb(char *s, int nb, size_t len, t_printf *tab)
