@@ -9,7 +9,7 @@ int main ()
 	char *s = "hola";
 	int f;
 	int j;
-	f = ft_printf("%*.*dhola\n", 2, 3, x);
+	f = ft_printf("%-*.*shola\n", 5, 3, s);
 	j = printf("%2.3dhola\n", x);
 	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 	return (0);
