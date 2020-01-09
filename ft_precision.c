@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:45:23 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 14:05:34 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/10 00:32:17 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_precision(const char *s, t_printf *tab)
 	size_t	q;
 
 	if (tab->punt == '.')
-	{
+	{	
 		if (s[tab->len] >= '1' && s[tab->len] <= '9')
 		{
 			substr = ft_substr(s, tab->len,
