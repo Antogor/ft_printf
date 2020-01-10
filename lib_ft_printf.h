@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:06:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/09 12:58:17 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/10 10:47:17 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,5 @@ void				display_s(char *s, t_printf *tab);
 void				display_u(unsigned int nb, t_printf *tab);
 void				display_hexa(int h, t_printf *tab);
 void				display_p(long int p, t_printf *tab);
+void				display_0(t_printf *tab);
 #endif

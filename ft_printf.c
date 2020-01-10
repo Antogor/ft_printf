@@ -6,13 +6,13 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:02:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/09 15:30:26 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/10 10:43:17 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
 
-int		check_error(const char *s)
+/*int		check_error(const char *s)
 {
 	int l;
 
@@ -35,7 +35,7 @@ int		check_error(const char *s)
 		l++;
 	}
 	return (0);
-}
+}*/
 
 void	to_printf(const char *s, t_printf *tab)
 {
@@ -69,9 +69,10 @@ int		ft_printf(const char *s, ...)
 	va_start(tab->args, s);
 	tab->len = 0;
 	tab->br = 0;
-	br = check_error(s);
+	br = 0;
+/*	br = check_error(s);
 	if (br == -1)
-		return (br);
+		return (br);*/
 	to_printf(s, tab);
 	br += tab->br;
 	free(tab);
