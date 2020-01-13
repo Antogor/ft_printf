@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:03:32 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/09 15:25:15 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 17:06:44 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	negative_chase(int d, char *s, t_printf *tab, size_t l)
 
 void	chase_normal(int d, char *q, t_printf *tab, size_t l)
 {
+	if (tab->arg_neg == 1)
+		tab->flags = '-';
 	if (tab->flags == '0' && tab->width > (int)l)
 	{
 		l -= d < 0 ? 1 : 0;
@@ -47,14 +49,15 @@ void	chase_normal(int d, char *q, t_printf *tab, size_t l)
 		l -= d < 0 ? 1 : 0;
 		negative_chase(d, q, tab, l);
 	}
-	else if (tab->flags == 1 && tab->width > (int)l)
+	else if (tab->flags == 1 && tab->width > (int)l && tab->arg_neg != 1)
 	{
 		ft_put_spaces(ft_total(l, tab->width), tab);
 		ft_putstr_fd(q, 1);
 	}
 	else
 		ft_putstr_fd(q, 1);
-	if (tab->flags == '-' && tab->width > (int)l)
+	if ((tab->flags == '-' || (tab->flags == 1 && tab->arg_neg == 1))
+		&& tab->width > (int)l)
 		ft_put_spaces(ft_total(l, tab->width), tab);
 }
 

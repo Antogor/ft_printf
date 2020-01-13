@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:45:23 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 15:35:27 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 16:54:54 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int		ft_precision(const char *s, t_printf *tab)
 		else if (s[tab->len] == '*')
 		{
 			tab->precision = va_arg(tab->args, int);
+			if (tab->precision < 0)
+				tab->punt = 0;
 			tab->len++;
 		}
 	}

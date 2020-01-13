@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:06:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 16:08:23 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 16:40:13 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef	struct		s_list_printf
 	int				width;
 	int				type;
 	int				len;
+	int				arg_neg;
 }					t_printf;
 
 int					ft_printf(const char *s, ...);
