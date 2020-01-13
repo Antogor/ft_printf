@@ -9,8 +9,8 @@ int main ()
 	char *s = "abc";
 	int f;
 	int j;
-	f = ft_printf("%*shola\n", -32, s);
-	j = printf("%*shola\n", -32, s);
+	f = ft_printf("%*shola\n", 32, s);
+	j = printf("%*shola\n", 32, s);
 	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 	write(1, NULL, 1);
 	return (0);
