@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:50:30 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 10:56:53 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 12:02:54 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_width(const char *s, t_printf *tab, int flags)
 
 	if (flags == '-' || flags == '0' || flags == 1)
 	{
-		if (s[tab->len] >= '1' && s[tab->len] <= '9')
+		if (s[tab->len] >= '0' && s[tab->len] <= '9')
 		{
 			substr = ft_substr(s, tab->len,
 					(q = ft_strlen_print_f(s, tab->len)));

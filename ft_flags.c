@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:44:04 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/09 15:33:29 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 11:49:40 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int		ft_flags(const char *s, t_printf *tab)
 {
-	if (s[tab->len] == '-' && s[tab->len + 1] != '0')
+	if (s[tab->len] == '-')
 	{
 		tab->len++;
+		if (s[tab->len] == '0')
+			tab->len++;
 		return ('-');
 	}
 	else if (s[tab->len] == '0')

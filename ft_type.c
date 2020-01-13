@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:49:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 11:15:12 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 12:07:41 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ char		ft_type(const char *s, t_printf *tab)
 		return (s[tab->len]);
 	else if (s[tab->len] == 'c')
 		return (s[tab->len]);
-	else if (s[tab->len] == 's')
+	else if (s[tab->len] == '-' && s[tab->len + 1] == 's')
+	{
+		tab->len++;
 		return (s[tab->len]);
+	}
 	else if (s[tab->len] == 'u')
 		return (s[tab->len]);
 	else if (s[tab->len] == 'X' || s[tab->len] == 'x')
