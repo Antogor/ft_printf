@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:05:25 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 11:34:03 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 15:34:40 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_put_punt(char *s, char *zero, t_printf *tab)
 void	display_s(char *s, t_printf *tab)
 {
 	char	*zero;
-	
+
 	zero = "(null)";
 	if (tab->punt == '.')
 		ft_put_punt(s, zero, tab);

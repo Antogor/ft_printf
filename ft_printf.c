@@ -6,36 +6,11 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:02:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/10 10:43:17 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 15:38:44 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lib_ft_printf.h"
-
-/*int		check_error(const char *s)
-{
-	int l;
-
-	l = 0;
-	while (s[l] != '\0')
-	{
-		if (s[l] == '%')
-		{
-			l++;
-			if ((s[l] == '-' && (s[l + 1] == '0' || s[l] == '*')) ||
-			(s[l] == '0' && s[l] == '*') ||
-			(s[l] == '*' && (s[l + 1] == '-' || s[l] == '0')))
-				return (-1);
-			if (!(s[l] == 'd' || s[l] == 'c' || s[l] == 's' || s[l] == 'p'
-			|| s[l] == 'x' || s[l] == 'X' || s[l] == 'i' || s[l] == 'u' ||
-			s[l] == '%' || s[l] == ' ' || s[l] == '*' || s[l] == '-' ||
-			s[l] == '0' || s[l] == '.' || (s[l] >= '1' && s[l] <= '9')))
-				return (-1);
-		}
-		l++;
-	}
-	return (0);
-}*/
 
 void	to_printf(const char *s, t_printf *tab)
 {
@@ -70,9 +45,6 @@ int		ft_printf(const char *s, ...)
 	tab->len = 0;
 	tab->br = 0;
 	br = 0;
-/*	br = check_error(s);
-	if (br == -1)
-		return (br);*/
 	to_printf(s, tab);
 	br += tab->br;
 	free(tab);

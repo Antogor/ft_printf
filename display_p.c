@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 10:39:46 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 15:25:45 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 15:35:48 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_memory_zero(char *memory, size_t l, t_printf *tab)
 {
 	char	*substr;
+
 	substr = ft_substr(memory, 2, l);
 	if (tab->flags == 1 && tab->width > tab->precision)
 		ft_put_precision(memory, 0, l, tab);

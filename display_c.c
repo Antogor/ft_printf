@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:04:08 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/08 11:04:17 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 15:34:13 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,9 @@ void	ft_spaces_c(int total, t_printf *tab)
 
 void	display_c(int c, t_printf *tab)
 {
-	int l;
-
-	l = 1;
 	if (tab->flags == 1)
 	{
-		ft_spaces_c(ft_total(l, tab->width), tab);
+		ft_spaces_c(ft_total(1, tab->width), tab);
 		ft_putchar_fd(c, 1);
 		tab->br++;
 	}
@@ -37,7 +34,13 @@ void	display_c(int c, t_printf *tab)
 	{
 		ft_putchar_fd(c, 1);
 		tab->br++;
-		ft_spaces_c(ft_total(l, tab->width), tab);
+		ft_spaces_c(ft_total(1, tab->width), tab);
+	}
+	else if (c == '%' && tab->flags == '0')
+	{
+		ft_putzeros(ft_total(1, tab->width), tab);
+		ft_putchar_fd(c, 1);
+		tab->br++;
 	}
 	else
 	{
