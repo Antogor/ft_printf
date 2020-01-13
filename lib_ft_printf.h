@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:06:52 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 16:40:13 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 17:11:11 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int					ft_flags(const char *s, t_printf *tab);
 int					ft_punt(const char *s, t_printf *tab);
 int					ft_width(const char *s, t_printf *tab, int flags);
 int					ft_precision(const char *s, t_printf *tab);
-int				ft_type(const char *s, t_printf *tab);
+int					ft_type(const char *s, t_printf *tab);
 void				ft_conversion(t_printf *tab);
 char				*ft_itoi(unsigned long int n);
 long int			ft_atoa(const char *nptr);

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:02:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 16:11:43 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 17:10:46 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	to_printf(const char *s, t_printf *tab)
 				break ;
 			else
 				err = check_flags(s, tab);
-				if (err == -1)
-					break ;
+			if (err == -1)
+				break ;
 		}
 		tab->len++;
 	}

@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:02:55 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 16:09:16 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 17:10:22 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		check_flags(const char *s, t_printf *tab)
 	tab->precision = ft_precision(s, tab);
 	tab->type = ft_type(s, tab);
 	if (tab->type == 0)
-		return(-1);
+		return (-1);
 	else
 		ft_conversion(tab);
 	return (0);
