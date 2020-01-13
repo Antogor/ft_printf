@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 16:39:24 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/09 14:22:20 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 13:14:58 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ void	ft_put_precision(char *s, int nb, size_t len, t_printf *tab)
 {
 	if (tab->flags == '-')
 		chase_line(s, nb, len, tab);
-	else if (tab->flags == '0' || tab->flags == 1)
+	else if (tab->flags == '0' || tab->flags == 1 || tab->punt == '.')
 		chase_nb(s, nb, len, tab);
 }
