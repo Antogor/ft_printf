@@ -6,7 +6,7 @@
 /*   By: agarzon- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 11:02:10 by agarzon-          #+#    #+#             */
-/*   Updated: 2020/01/13 15:38:44 by agarzon-         ###   ########.fr       */
+/*   Updated: 2020/01/13 16:11:43 by agarzon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,12 @@ void	to_printf(const char *s, t_printf *tab)
 			tab->len++;
 			while (s[tab->len] == ' ')
 				tab->len++;
-			err = check_flags(s, tab);
+			if (s[tab->len] == '\0')
+				break ;
+			else
+				err = check_flags(s, tab);
+				if (err == -1)
+					break ;
 		}
 		tab->len++;
 	}
