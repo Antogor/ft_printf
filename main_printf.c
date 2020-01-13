@@ -9,7 +9,7 @@ int main ()
 	char *s = "";
 	int f;
 	int j;
-	f = ft_printf("%phola\n", &x);
+	f = ft_printf("%.30phola\n", &x);
 	j = printf("%.2phola\n", &x);
 	printf("MIO: %d, ORIGINAL: %d\n", f,j);
 	write(1, NULL, 1);
